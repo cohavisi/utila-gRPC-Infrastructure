@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: utila-grpc
 spec:
-  replicas: 5
+  replicas: 3
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
         app: greeter
       annotations:
         sidecar.istio.io/inject: "false"
-        assignment.example.com/rollout: "evidence-20261119T152720Z"
+        assignment.example.com/rollout: "verified-1"
     spec:
       serviceAccountName: greeter-server
       terminationGracePeriodSeconds: 30
