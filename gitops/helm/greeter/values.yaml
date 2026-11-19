@@ -15,8 +15,8 @@ settings:
   CLIENT_GSA: ""
 server:
   replicas: 5
-  minAvailable: 2
-  rolloutMarker: manual-evidence-20261119-1
+  minAvailable: 3
+  rolloutMarker: verified-1
   resources:
     requests:
       cpu: 100m
