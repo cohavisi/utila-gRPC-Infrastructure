@@ -10,4 +10,4 @@ check:
 	terraform -chdir=terraform/platform test -no-color
 	terraform -chdir=terraform/routing test -no-color
 	$(PYTHON) -m unittest discover -s scripts -p 'test_*.py'
-	$(PYTHON) scripts/check_manifests.py --renderer both
+	$(PYTHON) scripts/check_manifests.py

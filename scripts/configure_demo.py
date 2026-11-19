@@ -8,7 +8,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def platform_configuration(outputs, image):
+def render_settings(outputs, image):
     match = re.fullmatch(r"([a-z0-9][a-z0-9./_-]+)@(sha256:[0-9a-f]{64})", image)
     if not match or match[2] == "sha256:" + "0" * 64:
         raise ValueError("image must contain a real immutable sha256 digest")
@@ -30,43 +30,19 @@ def platform_configuration(outputs, image):
     if any(not isinstance(value, str) or not value or "\n" in value or "\r" in value
            for value in settings.values()):
         raise ValueError("platform outputs must be non-empty, single-line strings")
-    return settings, match[1], match[2]
-
-
-def render_settings(outputs, image):
-    settings, repository, digest = platform_configuration(outputs, image)
-    return "".join(f"{key}={value}\n" for key, value in settings.items()), repository, digest
-
-
-def render_helm_values(outputs, image):
-    settings, repository, digest = platform_configuration(outputs, image)
-    return {"image": {"repository": repository, "digest": digest}, "settings": settings}
+    return "".join(f"{key}={value}\n" for key, value in settings.items()), match[1], match[2]
 
 
 def main():
     parser = argparse.ArgumentParser(description="Configure the GitOps demo from applied platform outputs.")
     parser.add_argument("--image", required=True, help="Artifact Registry image@sha256:digest")
-    parser.add_argument("--format", choices=["kustomize", "helm"], default="kustomize")
     args = parser.parse_args()
     result = subprocess.run(
         ["terraform", f"-chdir={ROOT / 'terraform/platform'}", "output", "-json"],
         check=True, stdout=subprocess.PIPE, text=True,
     )
     try:
-        outputs = json.loads(result.stdout)
-        if args.format == "helm":
-            import yaml
-
-            generated = render_helm_values(outputs, args.image)
-            path = ROOT / "gitops/helm/demo-values.yaml"
-            values = yaml.safe_load(path.read_text())
-            if not isinstance(values, dict):
-                parser.error("Helm demo values must be a YAML mapping")
-            values.update(generated)
-            path.write_text(yaml.safe_dump(values, sort_keys=False))
-            print("Configured Helm demo values locally. Review and push them before changing Argo CD.")
-            return
-        settings, repository, digest = render_settings(outputs, args.image)
+        settings, repository, digest = render_settings(json.loads(result.stdout), args.image)
     except (ValueError, KeyError) as error:
         parser.error(str(error))
     overlay = ROOT / "gitops/overlays/demo"
