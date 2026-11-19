@@ -8,6 +8,10 @@ live state.
 
 ## Reviewer entry points
 
+- [Latest live rerun with Pod-visible dashboard screenshots](part-2-tasks-3-6-live-evidence-20261119T152720Z.md):
+  5,259 successful RPCs, zero recorded failures, unchanged client, and exactly
+  three healthy endpoints after restoration. This is a separate, later run;
+  the original observations below remain unchanged.
 - [Application source and Part 1 explanations](https://github.com/cohavisi/utila-gRPC)
 - [Reproduction, architecture, and teardown runbook](../README.md)
 - [Machine-readable verification](evidence/verification.json)

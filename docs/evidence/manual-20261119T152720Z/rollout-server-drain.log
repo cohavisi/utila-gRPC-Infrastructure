@@ -1,0 +1,25 @@
+[pod/greeter-server-7bfffffc5c-8cst5/server] {"time":"2026-11-19T15:34:54.233368037Z","level":"WARN","msg":"private-network plaintext demo: application mTLS is not enabled","server_id":"greeter-server-7bfffffc5c-8cst5"}
+[pod/greeter-server-7bfffffc5c-8cst5/server] {"time":"2026-11-19T15:34:54.233644059Z","level":"INFO","msg":"starting xDS server","application":"0.0.0.0:50051","health":"0.0.0.0:50052","server_id":"greeter-server-7bfffffc5c-8cst5"}
+[pod/greeter-server-7bfffffc5c-8cst5/server] {"time":"2026-11-19T15:34:54.592625358Z","level":"INFO","msg":"xDS serving mode changed","address":"0.0.0.0:50051","mode":"SERVING","error":null}
+[pod/greeter-server-7bfffffc5c-q4v7s/server] {"time":"2026-11-19T15:37:14.892865123Z","level":"WARN","msg":"private-network plaintext demo: application mTLS is not enabled","server_id":"greeter-server-7bfffffc5c-q4v7s"}
+[pod/greeter-server-7bfffffc5c-q4v7s/server] {"time":"2026-11-19T15:37:14.893089596Z","level":"INFO","msg":"starting xDS server","application":"0.0.0.0:50051","health":"0.0.0.0:50052","server_id":"greeter-server-7bfffffc5c-q4v7s"}
+[pod/greeter-server-7bfffffc5c-q4v7s/server] {"time":"2026-11-19T15:37:15.146968733Z","level":"INFO","msg":"xDS serving mode changed","address":"0.0.0.0:50051","mode":"SERVING","error":null}
+[pod/greeter-server-7bfffffc5c-lgwht/server] {"time":"2026-11-19T15:34:54.234205137Z","level":"WARN","msg":"private-network plaintext demo: application mTLS is not enabled","server_id":"greeter-server-7bfffffc5c-lgwht"}
+[pod/greeter-server-7bfffffc5c-lgwht/server] {"time":"2026-11-19T15:34:54.23426212Z","level":"INFO","msg":"starting xDS server","application":"0.0.0.0:50051","health":"0.0.0.0:50052","server_id":"greeter-server-7bfffffc5c-lgwht"}
+[pod/greeter-server-7bfffffc5c-nslrk/server] {"time":"2026-11-19T14:34:28.539714347Z","level":"WARN","msg":"private-network plaintext demo: application mTLS is not enabled","server_id":"greeter-server-7bfffffc5c-nslrk"}
+[pod/greeter-server-7bfffffc5c-nslrk/server] {"time":"2026-11-19T14:34:28.539792408Z","level":"INFO","msg":"starting xDS server","application":"0.0.0.0:50051","health":"0.0.0.0:50052","server_id":"greeter-server-7bfffffc5c-nslrk"}
+[pod/greeter-server-7bfffffc5c-nslrk/server] {"time":"2026-11-19T14:34:29.017434468Z","level":"INFO","msg":"xDS serving mode changed","address":"0.0.0.0:50051","mode":"SERVING","error":null}
+[pod/greeter-server-7bfffffc5c-lgwht/server] {"time":"2026-11-19T15:34:54.588251654Z","level":"INFO","msg":"xDS serving mode changed","address":"0.0.0.0:50051","mode":"SERVING","error":null}
+[pod/greeter-server-7bfffffc5c-qglzf/server] {"time":"2026-11-19T14:34:37.258604577Z","level":"WARN","msg":"private-network plaintext demo: application mTLS is not enabled","server_id":"greeter-server-7bfffffc5c-qglzf"}
+[pod/greeter-server-7bfffffc5c-qglzf/server] {"time":"2026-11-19T14:34:37.258839186Z","level":"INFO","msg":"starting xDS server","application":"0.0.0.0:50051","health":"0.0.0.0:50052","server_id":"greeter-server-7bfffffc5c-qglzf"}
+[pod/greeter-server-7bfffffc5c-qglzf/server] {"time":"2026-11-19T14:34:37.59699587Z","level":"INFO","msg":"xDS serving mode changed","address":"0.0.0.0:50051","mode":"SERVING","error":null}
+[pod/greeter-server-7bfffffc5c-q4v7s/server] {"time":"2026-11-19T15:41:10.47971532Z","level":"INFO","msg":"shutdown requested"}
+[pod/greeter-server-7bfffffc5c-q4v7s/server] {"time":"2026-11-19T15:41:10.482632641Z","level":"INFO","msg":"application drained"}
+[pod/greeter-server-7bfffffc5c-8cst5/server] {"time":"2026-11-19T15:41:18.615807029Z","level":"INFO","msg":"shutdown requested"}
+[pod/greeter-server-7bfffffc5c-8cst5/server] {"time":"2026-11-19T15:41:18.621680413Z","level":"INFO","msg":"application drained"}
+[pod/greeter-server-7bfffffc5c-lgwht/server] {"time":"2026-11-19T15:41:31.283502975Z","level":"INFO","msg":"shutdown requested"}
+[pod/greeter-server-7bfffffc5c-lgwht/server] {"time":"2026-11-19T15:41:31.285944987Z","level":"INFO","msg":"application drained"}
+[pod/greeter-server-7bfffffc5c-nslrk/server] {"time":"2026-11-19T15:41:40.682692158Z","level":"INFO","msg":"shutdown requested"}
+[pod/greeter-server-7bfffffc5c-nslrk/server] {"time":"2026-11-19T15:41:40.687997709Z","level":"INFO","msg":"application drained"}
+[pod/greeter-server-7bfffffc5c-qglzf/server] {"time":"2026-11-19T15:41:49.44768473Z","level":"INFO","msg":"shutdown requested"}
+[pod/greeter-server-7bfffffc5c-qglzf/server] {"time":"2026-11-19T15:41:49.451352192Z","level":"INFO","msg":"application drained"}

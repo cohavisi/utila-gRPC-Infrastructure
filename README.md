@@ -16,6 +16,9 @@ client/server xDS. Argo CD is Healthy/Synced; three servers and the original
 continuous client are running. Distribution, GitOps scale-out, pod replacement,
 and server rollout are recorded in the [deployment evidence](docs/deployment-evidence.md),
 with screenshots and an explicit account of initial discovery errors.
+The [latest live evidence rerun](docs/part-2-tasks-3-6-live-evidence-20261119T152720Z.md)
+includes five actual Argo CD screenshots with visible Pods, continuous RPC
+logs, and a fully converged three-endpoint final state.
 **Cloud resources remain running and billable.**
 
 ## Architecture and ownership

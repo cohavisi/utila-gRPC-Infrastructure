@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Live evidence 20261119T152720Z</title>
+<style>body{font:18px system-ui;background:#f4f6fa;color:#17233b;padding:36px}main{max-width:1450px;margin:auto;background:white;padding:36px;border-radius:12px}h1{margin-top:0}.note{background:#fff1cf;padding:14px}table{border-collapse:collapse;width:100%;margin:24px 0}td,th{border:1px solid #d6deea;padding:12px;text-align:left}code{font-size:15px}.good{color:#147349}</style></head>
+<body><main><h1>Proxyless gRPC: live manual evidence</h1><p class="note"><b>Captured-data report, not a GCP Console or Argo CD screenshot.</b> Tables below are derived from real logs and API snapshots.</p>
+<p>Project: <b>vast-maxim-388708</b> | Cluster: <b>utila-grpc</b> | UTC run: <b>20261119T152720Z</b> | Renderer: <b>Kustomize</b></p>
+<h2 class="good">5,259 successful RPCs / 0 recorded failures</h2>
+<p>Continuous log: 2026-11-19T15:29:52.059587092Z to 2026-11-19T15:51:57.286884421Z. Missing call numbers: 0.</p>
+<table><tr><th>Experiment</th><th>Success</th><th>Failure</th><th>Distinct server IDs</th><th>Backend health after</th><th>Git revision</th></tr><tr><td>Baseline</td><td>255</td><td>0</td><td>3</td><td>{&#x27;HEALTHY&#x27;: 3}</td><td>10822ad</td></tr><tr><td>Scale-out 3 to 5</td><td>1090</td><td>0</td><td>5</td><td>{&#x27;HEALTHY&#x27;: 5}</td><td>f8ca390</td></tr><tr><td>One-pod replacement</td><td>389</td><td>0</td><td>6</td><td>{&#x27;HEALTHY&#x27;: 5, &#x27;UNHEALTHY&#x27;: 1}</td><td>f8ca390</td></tr><tr><td>Five-server rollout</td><td>1003</td><td>0</td><td>10</td><td>{&#x27;HEALTHY&#x27;: 5, &#x27;UNHEALTHY&#x27;: 5}</td><td>c252bf7</td></tr><tr><td>Restored baseline</td><td>1838</td><td>0</td><td>8</td><td>{&#x27;HEALTHY&#x27;: 3}</td><td>1777556</td></tr></table>
+<h2>Final state</h2><p>Three Ready servers; exactly three healthy cloud endpoints; original server manifest restored.</p>
+<p>Client: <code>greeter-client-5dbd98b6cc-kjh9l</code><br>UID: <code>7487a0b7-730b-49fb-aa26-85584674f5da</code><br>Container restarts: 0; identity unchanged across all observations.</p>
+<p>Actual authenticated Argo CD screenshots are supplied separately for every phase and include Deployment → ReplicaSet → Pod relationships.</p>
+<p>Limitations: unary workload, no latency SLO, no node crash/network partition, private plaintext application transport. Zero observed errors is not a universal lossless-failover guarantee.</p>
+</main></body></html>

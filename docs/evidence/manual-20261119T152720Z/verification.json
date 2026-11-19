@@ -1,0 +1,1593 @@
+{
+  "run_id": "20261119T152720Z",
+  "execution": "Live operator-directed, Copilot-executed manual experiments; not an independent human verification.",
+  "captured_at": "2026-11-19T15:55:01.175264+00:00",
+  "project": "vast-maxim-388708",
+  "cluster": "utila-grpc",
+  "zone": "us-central1-a",
+  "renderer": "Kustomize",
+  "client": {
+    "name": "greeter-client-5dbd98b6cc-kjh9l",
+    "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+    "restarts": 0
+  },
+  "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862",
+  "bootstrap_image": "gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.20.0@sha256:3f8bd252f6e902d1fe8bf834a5f29499dab628920ececb3ebdebd2906f0a641e",
+  "target": "xds:///greeter.utila.internal:50051",
+  "client_unchanged_in_all_snapshots": true,
+  "original_server_manifest_restored_byte_for_byte": true,
+  "service_uid_unchanged": true,
+  "server_xds_serving": [
+    {
+      "pod": "greeter-server-5c9975994-zj5f2",
+      "time": "2026-11-19T15:41:12.709404343Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-5c9975994-4mh7t",
+      "time": "2026-11-19T15:41:34.205755004Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-5c9975994-l2pbz",
+      "time": "2026-11-19T15:41:42.985241122Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-5c9975994-qfsbb",
+      "time": "2026-11-19T15:41:22.410290646Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-5c9975994-tcqjc",
+      "time": "2026-11-19T15:41:00.66311022Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    }
+  ],
+  "rollout_shutdown_records": [
+    {
+      "pod": "greeter-server-7bfffffc5c-q4v7s",
+      "time": "2026-11-19T15:41:10.47971532Z",
+      "level": "INFO",
+      "msg": "shutdown requested"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-q4v7s",
+      "time": "2026-11-19T15:41:10.482632641Z",
+      "level": "INFO",
+      "msg": "application drained"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-8cst5",
+      "time": "2026-11-19T15:41:18.615807029Z",
+      "level": "INFO",
+      "msg": "shutdown requested"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-8cst5",
+      "time": "2026-11-19T15:41:18.621680413Z",
+      "level": "INFO",
+      "msg": "application drained"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-lgwht",
+      "time": "2026-11-19T15:41:31.283502975Z",
+      "level": "INFO",
+      "msg": "shutdown requested"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-lgwht",
+      "time": "2026-11-19T15:41:31.285944987Z",
+      "level": "INFO",
+      "msg": "application drained"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-nslrk",
+      "time": "2026-11-19T15:41:40.682692158Z",
+      "level": "INFO",
+      "msg": "shutdown requested"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-nslrk",
+      "time": "2026-11-19T15:41:40.687997709Z",
+      "level": "INFO",
+      "msg": "application drained"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-qglzf",
+      "time": "2026-11-19T15:41:49.44768473Z",
+      "level": "INFO",
+      "msg": "shutdown requested"
+    },
+    {
+      "pod": "greeter-server-7bfffffc5c-qglzf",
+      "time": "2026-11-19T15:41:49.451352192Z",
+      "level": "INFO",
+      "msg": "application drained"
+    }
+  ],
+  "rollout_drained_pods": [
+    "greeter-server-7bfffffc5c-8cst5",
+    "greeter-server-7bfffffc5c-lgwht",
+    "greeter-server-7bfffffc5c-nslrk",
+    "greeter-server-7bfffffc5c-q4v7s",
+    "greeter-server-7bfffffc5c-qglzf"
+  ],
+  "pod_deletion": {
+    "pod": "greeter-server-7bfffffc5c-55fn8",
+    "command": [
+      "kubectl",
+      "-n",
+      "utila-grpc",
+      "delete",
+      "pod",
+      "greeter-server-7bfffffc5c-55fn8"
+    ],
+    "scope": "One explicitly selected Pod; ordinary graceful deletion, no force flag."
+  },
+  "ci_runs": [
+    {
+      "conclusion": "success",
+      "databaseId": 44558077283,
+      "headSha": "17775569990d0f369b7bb33f6f57863c7966a44b",
+      "status": "completed",
+      "url": "https://github.com/cohavisi/utila-gRPC-Infrastructure/actions/runs/44558077283"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44557292513,
+      "headSha": "c252bf7d30a280f1ce6b9ce6c9466a00fa7081f8",
+      "status": "completed",
+      "url": "https://github.com/cohavisi/utila-gRPC-Infrastructure/actions/runs/44557292513"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44555825924,
+      "headSha": "f8ca390a46f2413c4672b52c898748ccbe89415b",
+      "status": "completed",
+      "url": "https://github.com/cohavisi/utila-gRPC-Infrastructure/actions/runs/44555825924"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 44553612989,
+      "headSha": "10822adbd925ab0f23594529055caee847dc5237",
+      "status": "completed",
+      "url": "https://github.com/cohavisi/utila-gRPC-Infrastructure/actions/runs/44553612989"
+    }
+  ],
+  "continuous_observation": {
+    "first_call": "2026-11-19T15:29:52.059587092Z",
+    "last_call": "2026-11-19T15:51:57.286884421Z",
+    "successful_calls": 5259,
+    "failed_calls": 0,
+    "served_by": {
+      "greeter-server-5c9975994-4mh7t": 166,
+      "greeter-server-5c9975994-l2pbz": 153,
+      "greeter-server-5c9975994-qfsbb": 151,
+      "greeter-server-5c9975994-tcqjc": 161,
+      "greeter-server-5c9975994-zj5f2": 154,
+      "greeter-server-7bfffffc5c-55fn8": 513,
+      "greeter-server-7bfffffc5c-8cst5": 302,
+      "greeter-server-7bfffffc5c-kxq2n": 579,
+      "greeter-server-7bfffffc5c-lgwht": 312,
+      "greeter-server-7bfffffc5c-nslrk": 726,
+      "greeter-server-7bfffffc5c-q4v7s": 182,
+      "greeter-server-7bfffffc5c-qglzf": 737,
+      "greeter-server-7bfffffc5c-t7p9p": 564,
+      "greeter-server-7bfffffc5c-xmpnp": 559
+    },
+    "call_range": [
+      64973,
+      70231
+    ],
+    "duplicate_call_numbers": 0,
+    "missing_call_numbers_within_range": 0,
+    "failures": []
+  },
+  "collector": {
+    "started": "2026-11-19T15:29:52.952044Z",
+    "finished": "2026-11-19T15:51:57.539892Z",
+    "kubectl_returncode": 1
+  },
+  "experiments": {
+    "baseline": {
+      "start": "2026-11-19T15:30:18.208369Z",
+      "end": "2026-11-19T15:31:22.284314Z",
+      "first_call": "2026-11-19T15:30:18.264917474Z",
+      "last_call": "2026-11-19T15:31:22.276279154Z",
+      "successful_calls": 255,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-7bfffffc5c-55fn8": 85,
+        "greeter-server-7bfffffc5c-nslrk": 85,
+        "greeter-server-7bfffffc5c-qglzf": 85
+      },
+      "call_range": [
+        65077,
+        65331
+      ],
+      "duplicate_call_numbers": 0,
+      "missing_call_numbers_within_range": 0,
+      "failures": [],
+      "last_60_seconds": {
+        "first_call": "2026-11-19T15:30:22.295846771Z",
+        "last_call": "2026-11-19T15:31:22.276279154Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-55fn8": 79,
+          "greeter-server-7bfffffc5c-nslrk": 80,
+          "greeter-server-7bfffffc5c-qglzf": 80
+        },
+        "call_range": [
+          65093,
+          65331
+        ],
+        "duplicate_call_numbers": 0,
+        "missing_call_numbers_within_range": 0,
+        "failures": []
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-55fn8",
+          "uid": "235371a2-89d3-4893-9c03-ce32f86e159e",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-55fn8",
+          "uid": "235371a2-89d3-4893-9c03-ce32f86e159e",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "backend_health": {
+        "HEALTHY": 3
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-nslrk",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-qglzf",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-55fn8",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        }
+      ],
+      "argocd": {
+        "revision": "10822adbd925ab0f23594529055caee847dc5237",
+        "sync": "Synced",
+        "health": "Healthy",
+        "source": "gitops/overlays/demo"
+      },
+      "screenshot_captured_at": "2026-11-19T15:30:05.887633+00:00",
+      "dashboard_visible_pods": 4
+    },
+    "scaleout": {
+      "start": "2026-11-19T15:31:26.757624Z",
+      "end": "2026-11-19T15:36:01.397914Z",
+      "first_call": "2026-11-19T15:31:26.815240195Z",
+      "last_call": "2026-11-19T15:36:01.278476641Z",
+      "successful_calls": 1090,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-7bfffffc5c-55fn8": 332,
+        "greeter-server-7bfffffc5c-8cst5": 47,
+        "greeter-server-7bfffffc5c-lgwht": 47,
+        "greeter-server-7bfffffc5c-nslrk": 332,
+        "greeter-server-7bfffffc5c-qglzf": 332
+      },
+      "call_range": [
+        65349,
+        66438
+      ],
+      "duplicate_call_numbers": 0,
+      "missing_call_numbers_within_range": 0,
+      "failures": [],
+      "last_60_seconds": {
+        "first_call": "2026-11-19T15:35:01.313564949Z",
+        "last_call": "2026-11-19T15:36:01.278476641Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-55fn8": 48,
+          "greeter-server-7bfffffc5c-8cst5": 47,
+          "greeter-server-7bfffffc5c-lgwht": 47,
+          "greeter-server-7bfffffc5c-nslrk": 48,
+          "greeter-server-7bfffffc5c-qglzf": 49
+        },
+        "call_range": [
+          66200,
+          66438
+        ],
+        "duplicate_call_numbers": 0,
+        "missing_call_numbers_within_range": 0,
+        "failures": []
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-55fn8",
+          "uid": "235371a2-89d3-4893-9c03-ce32f86e159e",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-55fn8",
+          "uid": "235371a2-89d3-4893-9c03-ce32f86e159e",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-8cst5",
+          "uid": "2d6f3ca7-f66b-47a9-91d7-d8e1dfc54ab7",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-lgwht",
+          "uid": "5fdb71f6-60bc-4963-a49f-8ec49fc2fed8",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "backend_health": {
+        "HEALTHY": 5
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-nslrk",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-qglzf",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-55fn8",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-8cst5",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-lgwht",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        }
+      ],
+      "argocd": {
+        "revision": "f8ca390a46f2413c4672b52c898748ccbe89415b",
+        "sync": "Synced",
+        "health": "Healthy",
+        "source": "gitops/overlays/demo"
+      },
+      "screenshot_captured_at": "2026-11-19T15:37:00.410835+00:00",
+      "dashboard_visible_pods": 6
+    },
+    "pod-replacement": {
+      "start": "2026-11-19T15:36:53.454178Z",
+      "end": "2026-11-19T15:38:31.674054Z",
+      "first_call": "2026-11-19T15:36:53.685157404Z",
+      "last_call": "2026-11-19T15:38:31.451813367Z",
+      "successful_calls": 389,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-7bfffffc5c-55fn8": 15,
+        "greeter-server-7bfffffc5c-8cst5": 80,
+        "greeter-server-7bfffffc5c-lgwht": 80,
+        "greeter-server-7bfffffc5c-nslrk": 80,
+        "greeter-server-7bfffffc5c-q4v7s": 56,
+        "greeter-server-7bfffffc5c-qglzf": 78
+      },
+      "call_range": [
+        66646,
+        67034
+      ],
+      "duplicate_call_numbers": 0,
+      "missing_call_numbers_within_range": 0,
+      "failures": [],
+      "last_60_seconds": {
+        "first_call": "2026-11-19T15:37:31.479410931Z",
+        "last_call": "2026-11-19T15:38:31.451813367Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-8cst5": 48,
+          "greeter-server-7bfffffc5c-lgwht": 48,
+          "greeter-server-7bfffffc5c-nslrk": 48,
+          "greeter-server-7bfffffc5c-q4v7s": 48,
+          "greeter-server-7bfffffc5c-qglzf": 47
+        },
+        "call_range": [
+          66796,
+          67034
+        ],
+        "duplicate_call_numbers": 0,
+        "missing_call_numbers_within_range": 0,
+        "failures": []
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-55fn8",
+          "uid": "235371a2-89d3-4893-9c03-ce32f86e159e",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-8cst5",
+          "uid": "2d6f3ca7-f66b-47a9-91d7-d8e1dfc54ab7",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-lgwht",
+          "uid": "5fdb71f6-60bc-4963-a49f-8ec49fc2fed8",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-8cst5",
+          "uid": "2d6f3ca7-f66b-47a9-91d7-d8e1dfc54ab7",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-lgwht",
+          "uid": "5fdb71f6-60bc-4963-a49f-8ec49fc2fed8",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-q4v7s",
+          "uid": "e6358596-4cd3-47f8-9ef4-822c4ddb9282",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "backend_health": {
+        "HEALTHY": 5,
+        "UNHEALTHY": 1
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-nslrk",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-qglzf",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-55fn8",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "current_server": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-8cst5",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-lgwht",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-q4v7s",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        }
+      ],
+      "argocd": {
+        "revision": "f8ca390a46f2413c4672b52c898748ccbe89415b",
+        "sync": "Synced",
+        "health": "Healthy",
+        "source": "gitops/overlays/demo"
+      },
+      "screenshot_captured_at": "2026-11-19T15:38:51.752162+00:00",
+      "dashboard_visible_pods": 6
+    },
+    "server-rollout": {
+      "start": "2026-11-19T15:38:45.502666Z",
+      "end": "2026-11-19T15:42:58.356544Z",
+      "first_call": "2026-11-19T15:38:45.567679769Z",
+      "last_call": "2026-11-19T15:42:58.2016029Z",
+      "successful_calls": 1003,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-5c9975994-4mh7t": 60,
+        "greeter-server-5c9975994-l2pbz": 54,
+        "greeter-server-5c9975994-qfsbb": 68,
+        "greeter-server-5c9975994-tcqjc": 87,
+        "greeter-server-5c9975994-zj5f2": 79,
+        "greeter-server-7bfffffc5c-8cst5": 122,
+        "greeter-server-7bfffffc5c-lgwht": 132,
+        "greeter-server-7bfffffc5c-nslrk": 137,
+        "greeter-server-7bfffffc5c-q4v7s": 115,
+        "greeter-server-7bfffffc5c-qglzf": 149
+      },
+      "call_range": [
+        67090,
+        68092
+      ],
+      "duplicate_call_numbers": 0,
+      "missing_call_numbers_within_range": 0,
+      "failures": [],
+      "last_60_seconds": {
+        "first_call": "2026-11-19T15:41:58.448198551Z",
+        "last_call": "2026-11-19T15:42:58.2016029Z",
+        "successful_calls": 238,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-5c9975994-4mh7t": 48,
+          "greeter-server-5c9975994-l2pbz": 48,
+          "greeter-server-5c9975994-qfsbb": 48,
+          "greeter-server-5c9975994-tcqjc": 47,
+          "greeter-server-5c9975994-zj5f2": 47
+        },
+        "call_range": [
+          67855,
+          68092
+        ],
+        "duplicate_call_numbers": 0,
+        "missing_call_numbers_within_range": 0,
+        "failures": []
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-8cst5",
+          "uid": "2d6f3ca7-f66b-47a9-91d7-d8e1dfc54ab7",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-lgwht",
+          "uid": "5fdb71f6-60bc-4963-a49f-8ec49fc2fed8",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-q4v7s",
+          "uid": "e6358596-4cd3-47f8-9ef4-822c4ddb9282",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-4mh7t",
+          "uid": "e249260a-eee8-4e8d-a92b-b0fbfa432dd8",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-l2pbz",
+          "uid": "ba8fa6c3-e750-4ee5-9e56-e10d8d13bb83",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-qfsbb",
+          "uid": "17970b7c-99d2-4cef-be6f-b1816badbdf6",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-tcqjc",
+          "uid": "36e8ce4a-9628-41fa-af38-031dc14341de",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-zj5f2",
+          "uid": "895794a7-3dcb-455e-a346-927c7407e59b",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "backend_health": {
+        "HEALTHY": 5,
+        "UNHEALTHY": 5
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-nslrk",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "current_server": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-qglzf",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "current_server": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-8cst5",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "current_server": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-lgwht",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "current_server": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-q4v7s",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "current_server": false
+        },
+        {
+          "pod": "greeter-server-5c9975994-tcqjc",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-5c9975994-zj5f2",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-5c9975994-qfsbb",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-5c9975994-4mh7t",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-5c9975994-l2pbz",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        }
+      ],
+      "argocd": {
+        "revision": "c252bf7d30a280f1ce6b9ce6c9466a00fa7081f8",
+        "sync": "Synced",
+        "health": "Healthy",
+        "source": "gitops/overlays/demo"
+      },
+      "screenshot_captured_at": "2026-11-19T15:43:33.131000+00:00",
+      "dashboard_visible_pods": 6
+    },
+    "restored": {
+      "start": "2026-11-19T15:43:29.057738Z",
+      "end": "2026-11-19T15:51:12.338709Z",
+      "first_call": "2026-11-19T15:43:29.243353526Z",
+      "last_call": "2026-11-19T15:51:12.205536198Z",
+      "successful_calls": 1838,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-5c9975994-4mh7t": 82,
+        "greeter-server-5c9975994-l2pbz": 75,
+        "greeter-server-5c9975994-qfsbb": 59,
+        "greeter-server-5c9975994-tcqjc": 49,
+        "greeter-server-5c9975994-zj5f2": 50,
+        "greeter-server-7bfffffc5c-kxq2n": 519,
+        "greeter-server-7bfffffc5c-t7p9p": 505,
+        "greeter-server-7bfffffc5c-xmpnp": 499
+      },
+      "call_range": [
+        68215,
+        70052
+      ],
+      "duplicate_call_numbers": 0,
+      "missing_call_numbers_within_range": 0,
+      "failures": [],
+      "last_60_seconds": {
+        "first_call": "2026-11-19T15:50:12.238919433Z",
+        "last_call": "2026-11-19T15:51:12.205536198Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-kxq2n": 79,
+          "greeter-server-7bfffffc5c-t7p9p": 80,
+          "greeter-server-7bfffffc5c-xmpnp": 80
+        },
+        "call_range": [
+          69814,
+          70052
+        ],
+        "duplicate_call_numbers": 0,
+        "missing_call_numbers_within_range": 0,
+        "failures": []
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-4mh7t",
+          "uid": "e249260a-eee8-4e8d-a92b-b0fbfa432dd8",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-l2pbz",
+          "uid": "ba8fa6c3-e750-4ee5-9e56-e10d8d13bb83",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-qfsbb",
+          "uid": "17970b7c-99d2-4cef-be6f-b1816badbdf6",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-tcqjc",
+          "uid": "36e8ce4a-9628-41fa-af38-031dc14341de",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-5c9975994-zj5f2",
+          "uid": "895794a7-3dcb-455e-a346-927c7407e59b",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "role": "greeter-client",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-kxq2n",
+          "uid": "dce1c8ad-0435-486d-8d9f-1623c3c3ac57",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-t7p9p",
+          "uid": "377bc9d4-b03d-464f-a339-07daf2413661",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-xmpnp",
+          "uid": "c3d73f0d-7140-48f8-9a49-8aadcaf9cd5f",
+          "role": "greeter",
+          "ready": true,
+          "containers": 1,
+          "restarts": 0,
+          "bootstrap_exit_code": 0
+        }
+      ],
+      "backend_health": {
+        "HEALTHY": 3
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-kxq2n",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-t7p9p",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-xmpnp",
+          "health": "HEALTHY",
+          "port": 50051,
+          "current_server": true
+        }
+      ],
+      "argocd": {
+        "revision": "17775569990d0f369b7bb33f6f57863c7966a44b",
+        "sync": "Synced",
+        "health": "Healthy",
+        "source": "gitops/overlays/demo"
+      },
+      "screenshot_captured_at": "2026-11-19T15:51:00.168533+00:00",
+      "dashboard_visible_pods": 4
+    }
+  },
+  "source_manifest": [
+    {
+      "file": "baseline-after-application.json",
+      "sha256": "817bd921ef5c5eccfbccd98f3d7271884eeae5cb6effd0b2b73b69f1ada492c7",
+      "bytes": 11899
+    },
+    {
+      "file": "baseline-after-backends.json",
+      "sha256": "5b6719fac68c1729710efea4ee35562c96a97a361e03d8851628008ceae2cd2e",
+      "bytes": 1083
+    },
+    {
+      "file": "baseline-after-capture.json",
+      "sha256": "e81c3dada8ff086e0d7c588e6c65b943a439f227ea2a8d853094751f8b5da6aa",
+      "bytes": 92
+    },
+    {
+      "file": "baseline-after-deployments.json",
+      "sha256": "027509ac9c41ecb9c389e4bbf9a2599275a0b1d187cc6b1432bd89a0dbedeeee",
+      "bytes": 23077
+    },
+    {
+      "file": "baseline-after-pods.json",
+      "sha256": "c181d49b7ecad39118804020b25242728c6dbf53c660991954159453e38f1806",
+      "bytes": 59543
+    },
+    {
+      "file": "baseline-argocd-tree.json",
+      "sha256": "c2839a9ba7a001fc7ef61c916a2c779a99c54004224369ebc498543322565a96",
+      "bytes": 9030
+    },
+    {
+      "file": "baseline-before-application.json",
+      "sha256": "6f8c956344df819458ee287eccdd3ff8118ebe859c1bc634138a3c0b5b270374",
+      "bytes": 11899
+    },
+    {
+      "file": "baseline-before-backends.json",
+      "sha256": "5b6719fac68c1729710efea4ee35562c96a97a361e03d8851628008ceae2cd2e",
+      "bytes": 1083
+    },
+    {
+      "file": "baseline-before-capture.json",
+      "sha256": "a93449d06d9272513a6685295e78965a1a21f81648ed902e08170c6bee295458",
+      "bytes": 92
+    },
+    {
+      "file": "baseline-before-deployments.json",
+      "sha256": "027509ac9c41ecb9c389e4bbf9a2599275a0b1d187cc6b1432bd89a0dbedeeee",
+      "bytes": 23077
+    },
+    {
+      "file": "baseline-before-pods.json",
+      "sha256": "c181d49b7ecad39118804020b25242728c6dbf53c660991954159453e38f1806",
+      "bytes": 59543
+    },
+    {
+      "file": "baseline-window.json",
+      "sha256": "f054805517f50562c3d2faa55a73e87868e6b68422cfda57c338b15ad63d49dd",
+      "bytes": 85
+    },
+    {
+      "file": "ci-experiments.json",
+      "sha256": "00f5666e72ce10d2dcf10cd422c41c83507420b4454eb654689253642b623993",
+      "bytes": 1268
+    },
+    {
+      "file": "client-after.json",
+      "sha256": "eee5d3edef0a8740c5bd4972fc96df9cba8da6338320a901245a0cdc9e339263",
+      "bytes": 15444
+    },
+    {
+      "file": "client-before.json",
+      "sha256": "98a8f99cffd90dab186c00fe0c960ba2ab20fc06f6f7f29ae31ec565f463c724",
+      "bytes": 11630
+    },
+    {
+      "file": "client-continuous.jsonl",
+      "sha256": "ea61d6aa07efcc9a3bd70f5569cc6f1e2d2bffe4f175f3868406eb0417a3682d",
+      "bytes": 903181
+    },
+    {
+      "file": "client-identity-before.json",
+      "sha256": "4cc704be336fb1e855ca6da6ed0d1f8d3b48f29d7439651cdb777872e1f5c84d",
+      "bytes": 114
+    },
+    {
+      "file": "collector-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "collector-window.json",
+      "sha256": "77efd4b725a08b659dbdba6f0f8a1a611f12c270a6c12f93108c6f644700bdb9",
+      "bytes": 119
+    },
+    {
+      "file": "final-application.json",
+      "sha256": "3feb71309097a4fa5f7ced6c01f9def47e6ab4d9c23978889627fb9add466664",
+      "bytes": 13243
+    },
+    {
+      "file": "final-backends.json",
+      "sha256": "e71e2022c249198da19501abc7db7c1f894c2320ca5981d47a3295134a9d0390",
+      "bytes": 1083
+    },
+    {
+      "file": "final-capture.json",
+      "sha256": "411d8a609212e2b4a5abeacf5d664137d1759cb9364ceceae787398005859315",
+      "bytes": 92
+    },
+    {
+      "file": "final-deployments.json",
+      "sha256": "83398ae36f17ed7e8832efd0cda621cc6949cb07d7cf4d373d3af10be76e9235",
+      "bytes": 23079
+    },
+    {
+      "file": "final-pods.json",
+      "sha256": "9346812a17b42d531bed219097c01400e3a772e9c189505157b1fcb9fa4024d0",
+      "bytes": 59543
+    },
+    {
+      "file": "git-before.json",
+      "sha256": "60e82c782c48385a3f320523be57ed258e4662b5bb4a6cb4f7ae721b3c5d8ec6",
+      "bytes": 2049
+    },
+    {
+      "file": "initial-application.json",
+      "sha256": "6f8c956344df819458ee287eccdd3ff8118ebe859c1bc634138a3c0b5b270374",
+      "bytes": 11899
+    },
+    {
+      "file": "initial-backends.json",
+      "sha256": "5b6719fac68c1729710efea4ee35562c96a97a361e03d8851628008ceae2cd2e",
+      "bytes": 1083
+    },
+    {
+      "file": "initial-capture.json",
+      "sha256": "af88a0a37652b3479e5b12fa53c32fe20521c68a9be5f604b53274ba77c3dac5",
+      "bytes": 92
+    },
+    {
+      "file": "initial-deployments.json",
+      "sha256": "027509ac9c41ecb9c389e4bbf9a2599275a0b1d187cc6b1432bd89a0dbedeeee",
+      "bytes": 23077
+    },
+    {
+      "file": "initial-pods.json",
+      "sha256": "c181d49b7ecad39118804020b25242728c6dbf53c660991954159453e38f1806",
+      "bytes": 59543
+    },
+    {
+      "file": "nodes-before.json",
+      "sha256": "f4213a7e32b6e7e9790c37c230d4b04b99d64389897e84476c5d6245340143fb",
+      "bytes": 46590
+    },
+    {
+      "file": "pod-deletion-server.log",
+      "sha256": "32f6a5ddc33c74352ae821a0a8ce692904385c959848f811c0d31d0b3618a375",
+      "bytes": 676
+    },
+    {
+      "file": "pod-deletion.json",
+      "sha256": "1fad70400a88762fb97071096f912246b661b23dc30f8929e261979720d568e8",
+      "bytes": 259
+    },
+    {
+      "file": "pod-replacement-after-application.json",
+      "sha256": "341ba5015bce696f48352fcff01e294af88fc88f635cdbbf3769de9e7fee9592",
+      "bytes": 12347
+    },
+    {
+      "file": "pod-replacement-after-backends.json",
+      "sha256": "f9f8afb9e923385584ea80eed7d4ffb498438069efb323e9a8dae83947d040a0",
+      "bytes": 1916
+    },
+    {
+      "file": "pod-replacement-after-capture.json",
+      "sha256": "b22b1ea6d58533d4cf57b84b314815df98ccd11f4a734bc3740222ef88686697",
+      "bytes": 92
+    },
+    {
+      "file": "pod-replacement-after-deployments.json",
+      "sha256": "7bf4f0731464308a6f410211a1bfcac1ca812ff2eac81b98f2182a4cd8ea6e21",
+      "bytes": 23077
+    },
+    {
+      "file": "pod-replacement-after-pods.json",
+      "sha256": "7a4bfb28816ce638102f8d1448555e50f852e60c7c988ffee63bda508c3d0040",
+      "bytes": 90269
+    },
+    {
+      "file": "pod-replacement-argocd-tree.json",
+      "sha256": "eb9a0c1a4ef8bc13136a2d6f965a54becb8857943099d4b6ec9b6e5939abb822",
+      "bytes": 10170
+    },
+    {
+      "file": "pod-replacement-before-application.json",
+      "sha256": "dfc5731247b91f5fd2e5d4d553bb26487c7351429fb1beb1fded3f0b97d1353d",
+      "bytes": 12347
+    },
+    {
+      "file": "pod-replacement-before-backends.json",
+      "sha256": "9576b24ecbdfb33df095304cae8b4656c3839cdafb1776481f7d9c1003767606",
+      "bytes": 1637
+    },
+    {
+      "file": "pod-replacement-before-capture.json",
+      "sha256": "7ffa428b7757ec3a0dcfde9102e879cd5d0b9c5eb058dd00adbc4ddc345dc2b0",
+      "bytes": 92
+    },
+    {
+      "file": "pod-replacement-before-deployments.json",
+      "sha256": "6f887ba13ac6ea6db14ed9e73ab8e081a243dc3eecb8c35e81501f4bd0200a89",
+      "bytes": 23077
+    },
+    {
+      "file": "pod-replacement-before-pods.json",
+      "sha256": "6bf4f73a4eefb71c6efeb9a8740169235ae1a61835f8b958b1db5094e0926122",
+      "bytes": 90269
+    },
+    {
+      "file": "pod-replacement-window.json",
+      "sha256": "3164cbab1d0d9d0d5f9e95185ab199b7fe4a637a67b530a40acb113f8eb9260d",
+      "bytes": 85
+    },
+    {
+      "file": "restored-after-application.json",
+      "sha256": "3feb71309097a4fa5f7ced6c01f9def47e6ab4d9c23978889627fb9add466664",
+      "bytes": 13243
+    },
+    {
+      "file": "restored-after-backends.json",
+      "sha256": "e71e2022c249198da19501abc7db7c1f894c2320ca5981d47a3295134a9d0390",
+      "bytes": 1083
+    },
+    {
+      "file": "restored-after-capture.json",
+      "sha256": "92fbf535cd93d3a8b9ae7e43b1652b2962b42eaa2fa91779c5e6fec921831e4b",
+      "bytes": 92
+    },
+    {
+      "file": "restored-after-deployments.json",
+      "sha256": "83398ae36f17ed7e8832efd0cda621cc6949cb07d7cf4d373d3af10be76e9235",
+      "bytes": 23079
+    },
+    {
+      "file": "restored-after-pods.json",
+      "sha256": "9346812a17b42d531bed219097c01400e3a772e9c189505157b1fcb9fa4024d0",
+      "bytes": 59543
+    },
+    {
+      "file": "restored-argocd-tree.json",
+      "sha256": "c1e8c23a297ae1b2db016d990ba5f89701ed7af726c38a7d2d2c14c631706d1e",
+      "bytes": 9029
+    },
+    {
+      "file": "restored-before-application.json",
+      "sha256": "3df97a476c22bfbf95d7b599b45b7556fa90b1d36ff687d66c8232c657558ea7",
+      "bytes": 12795
+    },
+    {
+      "file": "restored-before-backends.json",
+      "sha256": "ec533e4f0ee9f6522e7a89522077ee05375f1a0ebb1a3152ba57d66a865a183d",
+      "bytes": 3032
+    },
+    {
+      "file": "restored-before-capture.json",
+      "sha256": "b924f15b85c92f8487667fc31bd59b690e2efe189e37420745288a3b93360efd",
+      "bytes": 92
+    },
+    {
+      "file": "restored-before-deployments.json",
+      "sha256": "e2d31172255b085152d459e84cc1272019230a8f49534def422ef7bdcfa8877e",
+      "bytes": 23106
+    },
+    {
+      "file": "restored-before-pods.json",
+      "sha256": "e73f6ca20ee40857392642754c499711d459de4288e884277fd5d17f713b8490",
+      "bytes": 90324
+    },
+    {
+      "file": "restored-window.json",
+      "sha256": "5cbc7630f7bb0f510a9ac241c2f2f0563a32c9b8b244238ab41b4b028e2a7ac9",
+      "bytes": 85
+    },
+    {
+      "file": "rollout-server-drain.log",
+      "sha256": "7745f86c80e9442fedc4200754d41034f15decf8b09884aa04af19177e4a7605",
+      "bytes": 4501
+    },
+    {
+      "file": "rollout-server-startup.log",
+      "sha256": "c538ca9a36500f83e3167750d955b494a8fb78ed7b6a7b2816b331eac73801f2",
+      "bytes": 3182
+    },
+    {
+      "file": "scaleout-after-application.json",
+      "sha256": "dfc5731247b91f5fd2e5d4d553bb26487c7351429fb1beb1fded3f0b97d1353d",
+      "bytes": 12347
+    },
+    {
+      "file": "scaleout-after-backends.json",
+      "sha256": "9576b24ecbdfb33df095304cae8b4656c3839cdafb1776481f7d9c1003767606",
+      "bytes": 1637
+    },
+    {
+      "file": "scaleout-after-capture.json",
+      "sha256": "2d066b6a26cdef92d45290390ed0d3b4f25203c835e3a3d48abc8a11a8b402b6",
+      "bytes": 92
+    },
+    {
+      "file": "scaleout-after-deployments.json",
+      "sha256": "6f887ba13ac6ea6db14ed9e73ab8e081a243dc3eecb8c35e81501f4bd0200a89",
+      "bytes": 23077
+    },
+    {
+      "file": "scaleout-after-pods.json",
+      "sha256": "6bf4f73a4eefb71c6efeb9a8740169235ae1a61835f8b958b1db5094e0926122",
+      "bytes": 90269
+    },
+    {
+      "file": "scaleout-argocd-tree.json",
+      "sha256": "8a2678a612a7da6b848127ba4ba126d69d7f9480f5b305a76129e4e86d597196",
+      "bytes": 10170
+    },
+    {
+      "file": "scaleout-before-application.json",
+      "sha256": "817bd921ef5c5eccfbccd98f3d7271884eeae5cb6effd0b2b73b69f1ada492c7",
+      "bytes": 11899
+    },
+    {
+      "file": "scaleout-before-backends.json",
+      "sha256": "5b6719fac68c1729710efea4ee35562c96a97a361e03d8851628008ceae2cd2e",
+      "bytes": 1083
+    },
+    {
+      "file": "scaleout-before-capture.json",
+      "sha256": "bf406fddb989f254ca88d1e627ddf3a47547f97019851c5f839372280d217b91",
+      "bytes": 92
+    },
+    {
+      "file": "scaleout-before-deployments.json",
+      "sha256": "027509ac9c41ecb9c389e4bbf9a2599275a0b1d187cc6b1432bd89a0dbedeeee",
+      "bytes": 23077
+    },
+    {
+      "file": "scaleout-before-pods.json",
+      "sha256": "c181d49b7ecad39118804020b25242728c6dbf53c660991954159453e38f1806",
+      "bytes": 59543
+    },
+    {
+      "file": "scaleout-window.json",
+      "sha256": "26d38797becc397ea7b4c2f0c0e6c8f29f14367de7f88aebd9db219cfc048749",
+      "bytes": 85
+    },
+    {
+      "file": "screenshots/baseline-argocd.png",
+      "sha256": "e31b45b112c7895dbd7b44f898b8da7f1b2c3df57fc01956bdf6d29809a800f3",
+      "bytes": 217121
+    },
+    {
+      "file": "screenshots/pod-replacement-argocd.png",
+      "sha256": "e8ed24ac43363019acb7623b14320d49f700acdefd21fcac62b62252541c2132",
+      "bytes": 239421
+    },
+    {
+      "file": "screenshots/restored-argocd.png",
+      "sha256": "19a3f2a55f10e501dbbd24a53af1f02971b0e790cdfc0185d1acfabc726f6497",
+      "bytes": 218901
+    },
+    {
+      "file": "screenshots/scaleout-argocd.png",
+      "sha256": "2d71ca47b1c68cd0b1f51a79f7a5684918e18e50360d32e62ec2f839c099bb9c",
+      "bytes": 239158
+    },
+    {
+      "file": "screenshots/server-rollout-argocd.png",
+      "sha256": "b010308b52fc86261d33a6b8529deea9d6b6673ce0e0371df50d30e0acbc0af5",
+      "bytes": 241949
+    },
+    {
+      "file": "server-rollout-after-application.json",
+      "sha256": "3df97a476c22bfbf95d7b599b45b7556fa90b1d36ff687d66c8232c657558ea7",
+      "bytes": 12795
+    },
+    {
+      "file": "server-rollout-after-backends.json",
+      "sha256": "ec533e4f0ee9f6522e7a89522077ee05375f1a0ebb1a3152ba57d66a865a183d",
+      "bytes": 3032
+    },
+    {
+      "file": "server-rollout-after-capture.json",
+      "sha256": "cf1280d06c313ffceeda032ef6999a167db664f642985a2b8a10e6b1ec04974d",
+      "bytes": 92
+    },
+    {
+      "file": "server-rollout-after-deployments.json",
+      "sha256": "e2d31172255b085152d459e84cc1272019230a8f49534def422ef7bdcfa8877e",
+      "bytes": 23106
+    },
+    {
+      "file": "server-rollout-after-pods.json",
+      "sha256": "e73f6ca20ee40857392642754c499711d459de4288e884277fd5d17f713b8490",
+      "bytes": 90324
+    },
+    {
+      "file": "server-rollout-argocd-tree.json",
+      "sha256": "27aa448dd7111daee229781c986a3d66815eb27bf1fca81f9ef5324065609cde",
+      "bytes": 10159
+    },
+    {
+      "file": "server-rollout-before-application.json",
+      "sha256": "341ba5015bce696f48352fcff01e294af88fc88f635cdbbf3769de9e7fee9592",
+      "bytes": 12347
+    },
+    {
+      "file": "server-rollout-before-backends.json",
+      "sha256": "f9f8afb9e923385584ea80eed7d4ffb498438069efb323e9a8dae83947d040a0",
+      "bytes": 1916
+    },
+    {
+      "file": "server-rollout-before-capture.json",
+      "sha256": "a740c7743347acac2136a238925a61dd0fd3416a8dd7cbeb687b973677090238",
+      "bytes": 92
+    },
+    {
+      "file": "server-rollout-before-deployments.json",
+      "sha256": "7bf4f0731464308a6f410211a1bfcac1ca812ff2eac81b98f2182a4cd8ea6e21",
+      "bytes": 23077
+    },
+    {
+      "file": "server-rollout-before-pods.json",
+      "sha256": "7a4bfb28816ce638102f8d1448555e50f852e60c7c988ffee63bda508c3d0040",
+      "bytes": 90269
+    },
+    {
+      "file": "server-rollout-window.json",
+      "sha256": "50a0ccab94c440dab8e12095d9590105559307d6142296611ae1f682f146a738",
+      "bytes": 85
+    }
+  ],
+  "limitations": [
+    "Unary calls only; no long-lived-stream, node-crash, partition, or latency-SLO test.",
+    "WaitForReady can conceal transient unavailability within the 10-second RPC deadline.",
+    "Pod deletion is graceful; it is not proof of abrupt node or process failure.",
+    "Application transport is plaintext on private Pod addresses, not application mTLS.",
+    "Actual Argo CD screenshots and a separately labeled rendered-data report are included; no GCP Console screenshot is claimed."
+  ]
+}

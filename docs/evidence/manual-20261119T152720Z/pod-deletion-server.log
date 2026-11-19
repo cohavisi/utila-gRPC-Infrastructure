@@ -1,0 +1,5 @@
+{"time":"2026-11-19T14:34:45.714994096Z","level":"WARN","msg":"private-network plaintext demo: application mTLS is not enabled","server_id":"greeter-server-7bfffffc5c-55fn8"}
+{"time":"2026-11-19T14:34:45.715056698Z","level":"INFO","msg":"starting xDS server","application":"0.0.0.0:50051","health":"0.0.0.0:50052","server_id":"greeter-server-7bfffffc5c-55fn8"}
+{"time":"2026-11-19T14:34:45.927176725Z","level":"INFO","msg":"xDS serving mode changed","address":"0.0.0.0:50051","mode":"SERVING","error":null}
+{"time":"2026-11-19T15:37:11.655845426Z","level":"INFO","msg":"shutdown requested"}
+{"time":"2026-11-19T15:37:11.672878608Z","level":"INFO","msg":"application drained"}
