@@ -9,8 +9,8 @@ configMapGenerator:
       - settings.env
 images:
   - name: utila-grpc
-    newName: REPLACE_IMAGE_REPOSITORY
-    digest: sha256:0000000000000000000000000000000000000000000000000000000000000000
+    newName: us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter
+    digest: sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862
 patches:
   - path: bootstrap.yaml
     target:
