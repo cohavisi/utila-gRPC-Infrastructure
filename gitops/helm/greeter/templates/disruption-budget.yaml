@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: greeter-server
+  namespace: {{ .Release.Namespace }}
+spec:
+  minAvailable: {{ .Values.server.minAvailable }}
+  selector:
+    matchLabels:
+      app: greeter

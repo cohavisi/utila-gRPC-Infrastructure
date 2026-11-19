@@ -1,0 +1,13 @@
+{{- if ne .Release.Namespace "utila-grpc" }}
+{{- fail "Use namespace utila-grpc: the Terraform Workload Identity bindings target that namespace." }}
+{{- end }}
+{{- if gt (int .Values.server.minAvailable) (int .Values.server.replicas) }}
+{{- fail "server.minAvailable must not exceed server.replicas." }}
+{{- end }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: deployment-settings
+  namespace: {{ .Release.Namespace }}
+data:
+  {{- include "greeter.settings" . | nindent 2 }}

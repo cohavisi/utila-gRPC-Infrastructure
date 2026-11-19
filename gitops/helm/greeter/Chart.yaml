@@ -1,0 +1,6 @@
+apiVersion: v2
+name: greeter
+description: Proxyless Go gRPC workloads for Google Cloud Service Mesh
+type: application
+version: 0.1.0
+appVersion: "97c8a93"

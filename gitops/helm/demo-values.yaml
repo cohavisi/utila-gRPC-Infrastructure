@@ -1,0 +1,13 @@
+namespace:
+  create: true
+image:
+  repository: us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter
+  digest: sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862
+settings:
+  PROJECT_NUMBER: "177884583171"
+  ZONE: us-central1-a
+  CLUSTER_NAME: utila-grpc
+  MESH_NAME: utila-grpc
+  NETWORK_NAME: utila-grpc
+  SERVER_GSA: utila-grpc-server@vast-maxim-388708.iam.gserviceaccount.com
+  CLIENT_GSA: utila-grpc-client@vast-maxim-388708.iam.gserviceaccount.com

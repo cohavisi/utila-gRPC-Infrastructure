@@ -42,8 +42,11 @@ Health/admin port `50052` stays internal.
 | `terraform/platform` | APIs, network, GKE, registry, separate client/server identities, mesh, inbound policy |
 | `terraform/routing` | Looks up existing controller-created NEGs; creates health/backend/route |
 | `gitops/base`, `gitops/overlays/demo` | Application desired state and environment configuration |
+| `gitops/helm/greeter`, `gitops/helm/demo-values.yaml` | Equivalent opt-in Helm chart and environment values |
 | `gitops/argocd/install` | Pinned Argo CD 3.6.2 bootstrap |
-| `gitops/argocd/application.yaml` | Restricted AppProject and auto-reconciling Application |
+| `gitops/argocd/project.yaml` | Shared restricted AppProject |
+| `gitops/argocd/application.yaml` | Default Kustomize Application |
+| `gitops/argocd/application-helm.yaml` | Alternative source for the same Application; initially paused |
 
 Argo CD does **not** execute Terraform. The cloud states are applied explicitly;
 the application is continuously reconciled from Git. Auto-prune is disabled
@@ -56,6 +59,8 @@ No custom Terraform plugin or `local-exec` hides this ownership boundary.
   enable APIs, provision the listed resources, manage IAM, and upload images.
 - Terraform **1.17.2**, Google Cloud CLI with `gke-gcloud-auth-plugin`, kubectl,
   Docker Buildx, Python 3, Git, and both repositories checked out.
+- Helm **4.3.x** for the Helm alternative and full local/CI checks; CI matches
+  the installed Argo CD repo-server's Helm **4.3.2**.
 - A trusted administrator IPv4 CIDR, normally your current public IP `/32`.
   The example CIDR is documentation-only; replace it.
 - Service Usage API access for initial API enablement. Organization policies
@@ -150,6 +155,7 @@ kubectl config current-context
 kubectl apply --server-side -k gitops/argocd/install
 kubectl -n argocd rollout status deployment/argocd-repo-server --timeout=300s
 kubectl -n argocd rollout status statefulset/argocd-application-controller --timeout=300s
+kubectl apply -f gitops/argocd/project.yaml
 kubectl apply -f gitops/argocd/application.yaml
 kubectl -n utila-grpc get service greeter -o yaml
 ```
@@ -231,6 +237,27 @@ Do not use `kubectl scale` for the persistent scale-out demonstration: Argo CD's
 self-healing would restore the Git-defined replica count. Restore three replicas
 in Git after the experiment. Perfectly equal call counts are not required.
 
+## Optional Helm deployment
+
+The live application remains on Kustomize. The equivalent Helm alternative is
+rendered, baseline-parity-tested, and schema-checked, not yet live-migrated.
+Follow the [Helm migration guide](docs/part-2-tasks-3-6-kustomize-to-helm.md) for
+the reviewed source switch, expected rollout, ConfigMap cleanup, and rollback.
+Do not install a second owner over the existing Argo-managed resources.
+
+Generate Helm environment values using the same applied platform outputs:
+
+```sh
+.tmp/venv/bin/python scripts/configure_demo.py --format helm \
+  --image="${IMAGE_REPOSITORY}@sha256:PASTE_REAL_DIGEST"
+.tmp/venv/bin/python scripts/check_manifests.py \
+  --renderer both --require-configured
+```
+
+The existing generator still defaults to Kustomize; `--format helm` changes
+only `gitops/helm/demo-values.yaml` and preserves workload overrides. Terraform
+ownership, NEG membership, and Argo CD's own Kustomize bootstrap are unchanged.
+
 ## Local checks and CI
 
 ```sh
@@ -241,10 +268,12 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 make check PYTHON=.tmp/venv/bin/python
 ```
 
-Checks include Terraform formatting/schema validation, **mock-provider** tests
+With Helm available on `PATH`, checks include Terraform formatting/schema
+validation, **mock-provider** tests
 (including a mock-only routing apply), configuration-script tests, Kustomize
-rendering, cross-resource wiring, Kubernetes 1.35 schemas for application
-resources, and the pinned Argo CD CRD schemas for Application/AppProject.
+and Helm rendering, baseline parity, cross-resource wiring, Kubernetes 1.35
+schemas for application resources, and the pinned Argo CD CRD schemas for the
+shared AppProject and both Application alternatives.
 They require internet access for providers, schemas, and pinned upstream Argo CD
 manifests, but no GCP credentials or Kubernetes API access. CI performs these
 checks; it does not provision infrastructure or execute a live cloud plan.
@@ -258,7 +287,11 @@ already initialized against a real GCS backend.
    cascading-deletion finalizer, so this does not immediately delete the Service.
 2. `terraform -chdir=terraform/routing destroy` first: removes the backend's
    references to the controller-owned NEGs.
-3. `kubectl delete -k gitops/overlays/demo`; wait for NEG controller cleanup and
+3. For Kustomize, run `kubectl delete -k gitops/overlays/demo`. For an Argo CD
+   Helm deployment, render and delete its configured resource set instead:
+   `helm template utila-grpc gitops/helm/greeter --namespace utila-grpc --values gitops/helm/demo-values.yaml > .tmp/helm-teardown.yaml`,
+   then `kubectl delete -f .tmp/helm-teardown.yaml`.
+   Wait for NEG controller cleanup and
    verify `gcloud compute network-endpoint-groups list --project="$PROJECT_ID"`
    no longer lists this demo's NEGs. Inspect before deleting anything else.
 4. Disable cluster deletion protection with an explicit platform apply:

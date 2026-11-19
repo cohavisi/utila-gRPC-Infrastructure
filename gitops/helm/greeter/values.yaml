@@ -1,0 +1,36 @@
+# Supply environment values with -f; these defaults are intentionally unconfigured.
+namespace:
+  create: false
+image:
+  repository: ""
+  digest: ""
+bootstrapImage: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.20.0@sha256:3f8bd252f6e902d1fe8bf834a5f29499dab628920ececb3ebdebd2906f0a641e
+settings:
+  PROJECT_NUMBER: ""
+  ZONE: ""
+  CLUSTER_NAME: ""
+  MESH_NAME: ""
+  NETWORK_NAME: ""
+  SERVER_GSA: ""
+  CLIENT_GSA: ""
+server:
+  replicas: 3
+  minAvailable: 2
+  rolloutMarker: verified-1
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 256Mi
+client:
+  interval: 250ms
+  timeout: 10s
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: greeter
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    cloud.google.com/neg: '{"exposed_ports":{"50051":{"name":"utila-grpc"}}}'
+spec:
+  type: ClusterIP
+  selector:
+    app: greeter
+  ports:
+    - name: grpc
+      port: 50051
+      targetPort: grpc
