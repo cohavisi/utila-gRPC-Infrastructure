@@ -107,6 +107,8 @@ resource "google_container_cluster" "main" {
   node_config {
     service_account = google_service_account.node.email
     oauth_scopes    = ["https://www.googleapis.com/auth/cloud-platform"]
+    # GKE reports the remaining pool here after the bootstrap pool is removed.
+    tags = ["${var.name}-nodes"]
   }
   release_channel {
     channel = "REGULAR"
