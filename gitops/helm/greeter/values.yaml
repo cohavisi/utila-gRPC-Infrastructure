@@ -14,7 +14,7 @@ settings:
   SERVER_GSA: ""
   CLIENT_GSA: ""
 server:
-  replicas: 3
+  replicas: 5
   minAvailable: 2
   rolloutMarker: verified-1
   resources:
