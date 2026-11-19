@@ -9,10 +9,12 @@ it does not change the original experiment measurements.
 **Subsequent change:** Helm support and its parity checks have been removed;
 Kustomize is now the sole supported deployment path. The historical CI failure
 at `e56f211` remains recorded below, but restoring inactive Helm defaults is no
-longer required. The original backend-health captures and screenshot
-qualification are unchanged; the
+longer required. The original backend-health captures are unchanged; the
 [backend-cleanup follow-up](#backend-cleanup-follow-up-2026-11-19-1510-utc)
 records subsequent removal of the retired entries.
+A baseline-revision Argo CD screenshot was supplied later and is included
+[below](#subsequently-supplied-baseline-revision-screenshot), with its timing
+and visibility limitations.
 Removal was published in
 [`11258a5`](https://github.com/cohavisi/utila-gRPC-Infrastructure/commit/11258a5),
 and its [Kustomize-only CI run passed](https://github.com/cohavisi/utila-gRPC-Infrastructure/actions/runs/44549218928).
@@ -35,7 +37,9 @@ follow-up closes the first, without rewriting that history:
    unhealthy retired endpoints**. Their eventual removal was not captured.
 2. The restoration commit left inactive Helm defaults inconsistent with
    Kustomize, and its CI run failed the renderer-parity check.
-3. This directory contains no screenshots. The earlier deployment's images
+3. The original captures contained no screenshots. A baseline-revision image
+   was supplied later, as documented below; operation-by-operation and final
+   dashboard screenshots are still absent for this run. Other runs' images
    must not be relabeled as screenshots of this manual run.
 
 The live application source stayed `gitops/overlays/demo` in every captured
@@ -68,6 +72,32 @@ Every file has a contiguous, increasing call-number range with no duplicate
 calls, and the five files do not overlap. Backend IPs were matched locally to
 before/after Pod IPs; the published summary identifies pods without duplicating
 private IP addresses or full Kubernetes API metadata.
+
+## Subsequently supplied baseline-revision screenshot
+
+The operator subsequently supplied `Screenshot 2026-11-19 at 16.14.16.png`.
+The image is preserved unchanged in this run's published evidence folder.
+It shows the `utila-grpc` Application **Healthy/Synced** at `main (3c0cfe5)`,
+matching this report's baseline revision. The separate last-sync panel shows
+the earlier operation revision `2fe6936`; these are distinct UI fields.
+
+The filename suggests `16:14:16` local time, or `14:14:16 UTC` **if** it uses
+the same GMT+0200 timezone shown in the UI. That would be after the baseline
+RPC segment began, not before the entire manual test. The filename is not an
+independently verified capture timestamp, and the last-sync time is not the
+screenshot time. This image is therefore a **baseline-revision dashboard
+illustration**, not proof of the application's state before testing or during
+the subsequent scale-out, replacement, rollout, and restoration.
+
+Deployments are visible, but their ReplicaSets and Pods are not shown.
+The image does not establish replica counts, Pod readiness, backend health,
+or RPC success. Those observations come from the original captures analyzed
+elsewhere in this report.
+
+![Subsequently supplied Argo CD screenshot: Healthy/Synced at baseline revision 3c0cfe5](evidence/manual-20261119T135844Z/baseline-revision-argocd.png)
+
+This later addition is not one of the original 42 input artifacts hashed in
+`verification.json`; their measurements and hashes remain unchanged.
 
 ## Environment and client continuity
 
@@ -265,10 +295,10 @@ Follow-up disposition:
    the original mixed-health snapshot is retained.
 2. The inactive Helm defaults and parity checks have since been removed.
    Keep the Application on Kustomize and retain the subsequent CI result.
-3. This manual run has no supplied screenshots. The
-   [original deployment evidence](deployment-evidence.md#screenshots-and-final-deployment)
-   supplies the assignment's screenshots, labeled with their original revision;
-   they are not screenshots of this later run.
+3. A [baseline-revision screenshot](#subsequently-supplied-baseline-revision-screenshot)
+   was supplied later. Its capture time is not independently verified, it does
+   not show Pods, and it does not cover the subsequent operations. Other
+   deployment runs' screenshots remain attributed to their own runs.
 
 ## Reviewer conclusion
 
