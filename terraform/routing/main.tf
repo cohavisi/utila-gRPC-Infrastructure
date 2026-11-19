@@ -55,7 +55,7 @@ resource "google_network_services_grpc_route" "greeter" {
   rules {
     action {
       destinations {
-        service_name = google_compute_backend_service.greeter.id
+        service_name = google_compute_backend_service.greeter.self_link
         weight       = 100
       }
     }
