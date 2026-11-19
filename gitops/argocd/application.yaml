@@ -19,8 +19,12 @@ spec:
       kind: Service
     - group: ""
       kind: ServiceAccount
+    - group: ""
+      kind: Pod
     - group: apps
       kind: Deployment
+    - group: apps
+      kind: ReplicaSet
     - group: policy
       kind: PodDisruptionBudget
 ---
