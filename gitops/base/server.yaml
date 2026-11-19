@@ -20,7 +20,7 @@ spec:
         app: greeter
       annotations:
         sidecar.istio.io/inject: "false"
-        assignment.example.com/rollout: "verified-1"
+        assignment.example.com/rollout: "manual-evidence-20261119-1"
     spec:
       serviceAccountName: greeter-server
       terminationGracePeriodSeconds: 30

@@ -16,7 +16,7 @@ settings:
 server:
   replicas: 5
   minAvailable: 2
-  rolloutMarker: verified-1
+  rolloutMarker: manual-evidence-20261119-1
   resources:
     requests:
       cpu: 100m
