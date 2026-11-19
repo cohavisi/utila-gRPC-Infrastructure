@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ignored
+spec:
+  template:
+    spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65532
+        runAsGroup: 65532
+        fsGroup: 65532
+        seccompProfile:
+          type: RuntimeDefault
+      volumes:
+        - name: bootstrap
+          emptyDir:
+            medium: Memory
+            sizeLimit: 1Mi
+      initContainers:
+        - name: xds-bootstrap
+          image: gcr.io/trafficdirector-prod/td-grpc-bootstrap:0.20.0@sha256:3f8bd252f6e902d1fe8bf834a5f29499dab628920ececb3ebdebd2906f0a641e
+          args:
+            - --gcp-project-number=$(PROJECT_NUMBER)
+            - --config-mesh=$(MESH_NAME)
+            - --vpc-network-name=$(NETWORK_NAME)
+            - --locality-zone=$(ZONE)
+            - --gke-cluster-name=$(CLUSTER_NAME)
+            - --gke-location-experimental=$(ZONE)
+            - --gke-namespace-experimental=$(POD_NAMESPACE)
+            - --gke-pod-name-experimental=$(POD_NAME)
+            - --output=/bootstrap/bootstrap.json
+          envFrom:
+            - configMapRef:
+                name: deployment-settings
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          volumeMounts:
+            - name: bootstrap
+              mountPath: /bootstrap
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 250m
+              memory: 64Mi

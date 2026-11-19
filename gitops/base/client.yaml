@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter-client
+  labels:
+    app.kubernetes.io/part-of: utila-grpc
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: greeter-client
+  template:
+    metadata:
+      labels:
+        app: greeter-client
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      serviceAccountName: greeter-client
+      terminationGracePeriodSeconds: 15
+      containers:
+        - name: client
+          image: utila-grpc
+          command: ["/client"]
+          args:
+            - -target=xds:///greeter.utila.internal:50051
+            - -count=0
+            - -interval=250ms
+            - -timeout=10s
+          env:
+            - name: GRPC_XDS_BOOTSTRAP
+              value: /bootstrap/bootstrap.json
+          volumeMounts:
+            - name: bootstrap
+              mountPath: /bootstrap
+              readOnly: true
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi

@@ -1,0 +1,4 @@
+project_id = "YOUR_PROJECT_ID"
+admin_cidr = "203.0.113.10/32" # Replace with your trusted public administrator IP.
+region     = "us-central1"
+zone       = "us-central1-a"

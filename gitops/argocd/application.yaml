@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: utila-grpc
+  namespace: argocd
+spec:
+  sourceRepos:
+    - https://github.com/cohavisi/utila-gRPC-Infrastructure.git
+  destinations:
+    - namespace: utila-grpc
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: ""
+      kind: ConfigMap
+    - group: ""
+      kind: Service
+    - group: ""
+      kind: ServiceAccount
+    - group: apps
+      kind: Deployment
+    - group: policy
+      kind: PodDisruptionBudget
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: utila-grpc
+  namespace: argocd
+spec:
+  project: utila-grpc
+  source:
+    repoURL: https://github.com/cohavisi/utila-gRPC-Infrastructure.git
+    targetRevision: main
+    path: gitops/overlays/demo
+  destination:
+    namespace: utila-grpc
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 1m

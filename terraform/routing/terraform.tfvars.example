@@ -1,0 +1,4 @@
+project_id = "YOUR_PROJECT_ID"
+mesh_name  = "utila-grpc"
+neg_name   = "utila-grpc"
+neg_zones  = ["us-central1-a"]

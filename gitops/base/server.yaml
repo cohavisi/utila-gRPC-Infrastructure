@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter-server
+  labels:
+    app.kubernetes.io/part-of: utila-grpc
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: greeter
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: greeter
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      serviceAccountName: greeter-server
+      terminationGracePeriodSeconds: 30
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: greeter
+      containers:
+        - name: server
+          image: utila-grpc
+          command: ["/server"]
+          ports:
+            - name: grpc
+              containerPort: 50051
+            - name: health
+              containerPort: 50052
+          env:
+            - name: GRPC_XDS_BOOTSTRAP
+              value: /bootstrap/bootstrap.json
+          volumeMounts:
+            - name: bootstrap
+              mountPath: /bootstrap
+              readOnly: true
+          startupProbe:
+            grpc:
+              port: 50052
+              service: liveness
+            periodSeconds: 2
+            failureThreshold: 30
+            timeoutSeconds: 2
+          readinessProbe:
+            grpc:
+              port: 50052
+            periodSeconds: 3
+            timeoutSeconds: 2
+          livenessProbe:
+            grpc:
+              port: 50052
+              service: liveness
+            periodSeconds: 10
+            timeoutSeconds: 2
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
