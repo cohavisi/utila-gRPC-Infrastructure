@@ -1,0 +1,2184 @@
+{
+  "run_id": "evidence-20261119T135844Z",
+  "scope": "Analysis of supplied manual-run captures; no deployment changes or new cloud-state captures.",
+  "source_directory": ".tmp/evidence-20261119T135844Z",
+  "source_artifacts_are_included": false,
+  "source_manifest": [
+    {
+      "file": "application-before.json",
+      "bytes": 12997,
+      "sha256": "222a9d925924d921fc2b113da3f73abdbf6f5b800ef25c3d988fa4eb59d7ece9"
+    },
+    {
+      "file": "baseline-application.json",
+      "bytes": 12997,
+      "sha256": "f3ffe8868e703a91c717d380338dfcd8439a4f3c5cbac5a55a2a0ab4330d2acd"
+    },
+    {
+      "file": "baseline-backends.json",
+      "bytes": 1083,
+      "sha256": "8602cc32b87c68a3be8bd6cb83eb527803d2f172fb35c91fd5e630cfc1db21b7"
+    },
+    {
+      "file": "baseline-client.jsonl",
+      "bytes": 42981,
+      "sha256": "e933d201c5c4f4aeb5276d0bc4a39c9ce87dff0be35be29d9001162689961bf5"
+    },
+    {
+      "file": "baseline-end.txt",
+      "bytes": 21,
+      "sha256": "bb43364701dbe4495a2fa073b790d7f5e8a6f97e319a95f2ade82ec3928c7b22"
+    },
+    {
+      "file": "baseline-pods-after.json",
+      "bytes": 84097,
+      "sha256": "1abaa708bc12a9f0497cacf846e499bb54d29f16d536bf698eeb11b8a6d04ea8"
+    },
+    {
+      "file": "baseline-pods-before.json",
+      "bytes": 84097,
+      "sha256": "1abaa708bc12a9f0497cacf846e499bb54d29f16d536bf698eeb11b8a6d04ea8"
+    },
+    {
+      "file": "baseline-start.txt",
+      "bytes": 21,
+      "sha256": "628b57b39a0e5d4251e5a804890c616ccb6a202cdbd472d232fed06480016ad4"
+    },
+    {
+      "file": "client-after.json",
+      "bytes": 15444,
+      "sha256": "eee5d3edef0a8740c5bd4972fc96df9cba8da6338320a901245a0cdc9e339263"
+    },
+    {
+      "file": "client-before.json",
+      "bytes": 15444,
+      "sha256": "eee5d3edef0a8740c5bd4972fc96df9cba8da6338320a901245a0cdc9e339263"
+    },
+    {
+      "file": "deleted-server.txt",
+      "bytes": 32,
+      "sha256": "3fd4bf570e45ccd7565d4b142705ce5ac0e89b03b3987c52da96f7318a45c60f"
+    },
+    {
+      "file": "initial-git-revision.txt",
+      "bytes": 41,
+      "sha256": "b58332c29931ed2c6b2a09120e4b8d0128d8a9295f0fb0a321648cbcad47b3d3"
+    },
+    {
+      "file": "pod-replacement-application.json",
+      "bytes": 13562,
+      "sha256": "313176189b6ee6a21e8383af8a0cfc9cb0309a69c166a1fb21833d1a67480d6d"
+    },
+    {
+      "file": "pod-replacement-backends.json",
+      "bytes": 1916,
+      "sha256": "b197f9ff75f7feed96561580c33ee3a6db520619429331fd00fb0f0de9b7bba5"
+    },
+    {
+      "file": "pod-replacement-client.jsonl",
+      "bytes": 79764,
+      "sha256": "0e2cba4417eca15c11816b899713d9b01c08e9eade7ef0663b14733623187c45"
+    },
+    {
+      "file": "pod-replacement-end.txt",
+      "bytes": 21,
+      "sha256": "f7538132216e9bc234162ac565a8d6c4238e285b74ece98e4c52cbd518c8304c"
+    },
+    {
+      "file": "pod-replacement-pods-after.json",
+      "bytes": 127495,
+      "sha256": "eb7cc123921bd822a71620adb41ae1d217d4b255e6fbd5306aa238627c7ceb39"
+    },
+    {
+      "file": "pod-replacement-pods-before.json",
+      "bytes": 127495,
+      "sha256": "91d33c8e721d97c396134a0819d8844cd1aae482c8d5488fa6f68b720768fe5b"
+    },
+    {
+      "file": "pod-replacement-start.txt",
+      "bytes": 21,
+      "sha256": "b161f94e6eeaf8a6363bb2b8f4f176310af19ae1b1e5b1c2ab9db53c5135502d"
+    },
+    {
+      "file": "restored-application.json",
+      "bytes": 14690,
+      "sha256": "11e698654b003d3e773c72564e34a9488da9a3521fb08b1e48f328b16e3d2d69"
+    },
+    {
+      "file": "restored-backends.json",
+      "bytes": 2478,
+      "sha256": "f6ef2bbac818c7f5dad0c6bb80bafff809db731608af3d619e0dcad597925273"
+    },
+    {
+      "file": "restored-client.jsonl",
+      "bytes": 150243,
+      "sha256": "3a3658c717087986943726b1f5ff9881bd9d82823f240c5505d3daa41b6c12f8"
+    },
+    {
+      "file": "restored-end.txt",
+      "bytes": 21,
+      "sha256": "b3c23972bbc8b5c5541364b0b9ec2084ff6ea74e521d31068e153fa80bb8850d"
+    },
+    {
+      "file": "restored-pods-after.json",
+      "bytes": 84097,
+      "sha256": "9383e590b7a378fa9e511737c198600dc03bd8a6e511946f8213e49208faba44"
+    },
+    {
+      "file": "restored-pods-before.json",
+      "bytes": 127575,
+      "sha256": "fa5d7de86cd3607b414a42c407b32c6c1983a81037a4718bddfb8c1ad09515d8"
+    },
+    {
+      "file": "restored-start.txt",
+      "bytes": 21,
+      "sha256": "abe0a328927e1b7779d3913da106ee35cd6f2ec99fcd27e8a081bc35b65dc1c6"
+    },
+    {
+      "file": "scaleout-application.json",
+      "bytes": 13562,
+      "sha256": "36d105f5232c0a6cc1b9269624cdf5f15d0b356b13b3185e535531a454cbd5a8"
+    },
+    {
+      "file": "scaleout-backends.json",
+      "bytes": 1637,
+      "sha256": "70ab9cb9005b6a245602942eb9401e618888c5b630ee321ce7abafb3fab15d9e"
+    },
+    {
+      "file": "scaleout-client.jsonl",
+      "bytes": 276716,
+      "sha256": "05eacf0f2c50302ad02ad6608b2a12d319e9bce013de0c02e70e56e7885649d6"
+    },
+    {
+      "file": "scaleout-end.txt",
+      "bytes": 21,
+      "sha256": "4a3d3c66d01a373d79b1e7a5bfacd4646c035264cdcbbb5e82ec27f5518e5cf6"
+    },
+    {
+      "file": "scaleout-git-revision.txt",
+      "bytes": 41,
+      "sha256": "12f414efc14018595aec5b166826c03ccd8d306a96c6a4d1a51deda519ed7cc0"
+    },
+    {
+      "file": "scaleout-pods-after.json",
+      "bytes": 127495,
+      "sha256": "91d33c8e721d97c396134a0819d8844cd1aae482c8d5488fa6f68b720768fe5b"
+    },
+    {
+      "file": "scaleout-pods-before.json",
+      "bytes": 84097,
+      "sha256": "1abaa708bc12a9f0497cacf846e499bb54d29f16d536bf698eeb11b8a6d04ea8"
+    },
+    {
+      "file": "scaleout-start.txt",
+      "bytes": 21,
+      "sha256": "d001c487dba90de2ce6171196bf51a525c3018ad25386e55594df078e90b3ec4"
+    },
+    {
+      "file": "server-rollout-application.json",
+      "bytes": 14126,
+      "sha256": "fdd522b156f946c7019c6d53693b637a08a8156c145432276976aad51afdbc2f"
+    },
+    {
+      "file": "server-rollout-backends.json",
+      "bytes": 3032,
+      "sha256": "6813c1c128ce80a7e40fdd96bd8f3794aafbfd56c5cb08b7c4eeddc56fd91588"
+    },
+    {
+      "file": "server-rollout-client.jsonl",
+      "bytes": 212642,
+      "sha256": "238b4acbbc546970b8c535905b044a02ec2a176ca140e57aba9f60f7a2ffb1cc"
+    },
+    {
+      "file": "server-rollout-end.txt",
+      "bytes": 21,
+      "sha256": "ba9e1c5d5d6b823e706175432dc9ae5b41530261f6e7d3c574ccfca5c5db7a0e"
+    },
+    {
+      "file": "server-rollout-pods-after.json",
+      "bytes": 127575,
+      "sha256": "fa5d7de86cd3607b414a42c407b32c6c1983a81037a4718bddfb8c1ad09515d8"
+    },
+    {
+      "file": "server-rollout-pods-before.json",
+      "bytes": 127495,
+      "sha256": "eb7cc123921bd822a71620adb41ae1d217d4b255e6fbd5306aa238627c7ceb39"
+    },
+    {
+      "file": "server-rollout-start.txt",
+      "bytes": 21,
+      "sha256": "25dfa3817be7b10a3cf6b31da1b9edc9d9ca990f4f92480cb890a3af70fe9404"
+    },
+    {
+      "file": "server-startup.log",
+      "bytes": 3208,
+      "sha256": "e447d67ac4646faaa57865cce565113cce380ea03d1cfa9ea7a6f427f7e46e17"
+    }
+  ],
+  "project_id": "vast-maxim-388708",
+  "cluster": "utila-grpc",
+  "zone": "us-central1-a",
+  "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862",
+  "client": {
+    "name": "greeter-client-5dbd98b6cc-kjh9l",
+    "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+    "restarts": 0,
+    "before_after_files_identical": true,
+    "same_uid_and_zero_restarts_in_all_experiment_snapshots": true,
+    "arguments": [
+      "-target=xds:///greeter.utila.internal:50051",
+      "-count=0",
+      "-interval=250ms",
+      "-timeout=10s"
+    ]
+  },
+  "initial_argocd": {
+    "uid": "cbdbee70-b1c6-4bfe-aef7-a89117d219ed",
+    "source_path": "gitops/overlays/demo",
+    "revision": "3c0cfe542a10220a04334bc99b77b38fca3f5fbb",
+    "health": "Healthy",
+    "sync": "Synced"
+  },
+  "totals": {
+    "distinct_captured_calls": 4435,
+    "successful_calls": 4435,
+    "failed_calls": 0,
+    "overlapping_call_numbers": 0,
+    "minimum_captured_call": 44604,
+    "maximum_captured_call": 52259,
+    "uncaptured_call_numbers_between_minimum_and_maximum": 3221
+  },
+  "experiments": {
+    "baseline": {
+      "recorded_start": "2026-11-19T14:04:19Z",
+      "recorded_end": "2026-11-19T14:05:25Z",
+      "first_captured_call": "2026-11-19T14:04:19.133163637Z",
+      "last_captured_call": "2026-11-19T14:05:21.882640795Z",
+      "start_to_first_call_seconds": 0.133163637,
+      "call_range": [
+        44604,
+        44853
+      ],
+      "missing_call_numbers_within_file": 0,
+      "successful_calls": 250,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-7bfffffc5c-j6bbg": 83,
+        "greeter-server-7bfffffc5c-r29vq": 84,
+        "greeter-server-7bfffffc5c-vvws6": 83
+      },
+      "failures": [],
+      "last_60_seconds": {
+        "definition": "Records at most 60 seconds before the last captured call, inclusive; not an independently captured window.",
+        "first_call": "2026-11-19T14:04:21.904177102Z",
+        "last_call": "2026-11-19T14:05:21.882640795Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-j6bbg": 80,
+          "greeter-server-7bfffffc5c-r29vq": 80,
+          "greeter-server-7bfffffc5c-vvws6": 79
+        }
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "server_count_before": 3,
+      "server_count_after": 3,
+      "backend_health": {
+        "HEALTHY": 3
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-r29vq",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-vvws6",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-j6bbg",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        }
+      ],
+      "all_current_servers_have_healthy_endpoints": true,
+      "argocd": {
+        "source_path": "gitops/overlays/demo",
+        "revision": "3c0cfe542a10220a04334bc99b77b38fca3f5fbb",
+        "health": "Healthy",
+        "sync": "Synced",
+        "operation": "Succeeded",
+        "conditions": []
+      }
+    },
+    "scaleout": {
+      "recorded_start": "2026-11-19T14:14:45Z",
+      "recorded_end": "2026-11-19T14:21:34Z",
+      "first_captured_call": "2026-11-19T14:14:45.250600444Z",
+      "last_captured_call": "2026-11-19T14:21:30.769295206Z",
+      "start_to_first_call_seconds": 0.250600444,
+      "call_range": [
+        47089,
+        48698
+      ],
+      "missing_call_numbers_within_file": 0,
+      "successful_calls": 1610,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-7bfffffc5c-4p9r9": 139,
+        "greeter-server-7bfffffc5c-j6bbg": 445,
+        "greeter-server-7bfffffc5c-nxvd9": 137,
+        "greeter-server-7bfffffc5c-r29vq": 444,
+        "greeter-server-7bfffffc5c-vvws6": 445
+      },
+      "failures": [],
+      "last_60_seconds": {
+        "definition": "Records at most 60 seconds before the last captured call, inclusive; not an independently captured window.",
+        "first_call": "2026-11-19T14:20:30.798328445Z",
+        "last_call": "2026-11-19T14:21:30.769295206Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-4p9r9": 48,
+          "greeter-server-7bfffffc5c-j6bbg": 48,
+          "greeter-server-7bfffffc5c-nxvd9": 47,
+          "greeter-server-7bfffffc5c-r29vq": 48,
+          "greeter-server-7bfffffc5c-vvws6": 48
+        }
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-4p9r9",
+          "uid": "17706afe-b34c-4a20-ac64-4701c9ee7148",
+          "created_at": "2026-11-19T14:18:27Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nxvd9",
+          "uid": "bd7317f7-bbcd-48eb-92cf-fd667b9d2c38",
+          "created_at": "2026-11-19T14:18:27Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "server_count_before": 3,
+      "server_count_after": 5,
+      "backend_health": {
+        "HEALTHY": 5
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-r29vq",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-vvws6",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-j6bbg",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-nxvd9",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-4p9r9",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        }
+      ],
+      "all_current_servers_have_healthy_endpoints": true,
+      "argocd": {
+        "source_path": "gitops/overlays/demo",
+        "revision": "45437c2aee6664324046b903e475cd7765d0af3c",
+        "health": "Healthy",
+        "sync": "Synced",
+        "operation": "Succeeded",
+        "conditions": []
+      }
+    },
+    "pod-replacement": {
+      "recorded_start": "2026-11-19T14:22:04Z",
+      "recorded_end": "2026-11-19T14:24:05Z",
+      "first_captured_call": "2026-11-19T14:22:04.015318897Z",
+      "last_captured_call": "2026-11-19T14:24:00.717542873Z",
+      "start_to_first_call_seconds": 0.015318897,
+      "call_range": [
+        48830,
+        49293
+      ],
+      "missing_call_numbers_within_file": 0,
+      "successful_calls": 464,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-7bfffffc5c-4p9r9": 31,
+        "greeter-server-7bfffffc5c-j6bbg": 95,
+        "greeter-server-7bfffffc5c-nxvd9": 94,
+        "greeter-server-7bfffffc5c-r29vq": 95,
+        "greeter-server-7bfffffc5c-vfhs8": 55,
+        "greeter-server-7bfffffc5c-vvws6": 94
+      },
+      "failures": [],
+      "last_60_seconds": {
+        "definition": "Records at most 60 seconds before the last captured call, inclusive; not an independently captured window.",
+        "first_call": "2026-11-19T14:23:00.96834511Z",
+        "last_call": "2026-11-19T14:24:00.717542873Z",
+        "successful_calls": 238,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-j6bbg": 48,
+          "greeter-server-7bfffffc5c-nxvd9": 48,
+          "greeter-server-7bfffffc5c-r29vq": 48,
+          "greeter-server-7bfffffc5c-vfhs8": 47,
+          "greeter-server-7bfffffc5c-vvws6": 47
+        }
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-4p9r9",
+          "uid": "17706afe-b34c-4a20-ac64-4701c9ee7148",
+          "created_at": "2026-11-19T14:18:27Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nxvd9",
+          "uid": "bd7317f7-bbcd-48eb-92cf-fd667b9d2c38",
+          "created_at": "2026-11-19T14:18:27Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nxvd9",
+          "uid": "bd7317f7-bbcd-48eb-92cf-fd667b9d2c38",
+          "created_at": "2026-11-19T14:18:27Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vfhs8",
+          "uid": "54b5cda6-9786-45a3-b267-64d3e39cb2b0",
+          "created_at": "2026-11-19T14:22:42Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "server_count_before": 5,
+      "server_count_after": 5,
+      "backend_health": {
+        "HEALTHY": 5,
+        "UNHEALTHY": 1
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-r29vq",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-vvws6",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-j6bbg",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-nxvd9",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-4p9r9",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-vfhs8",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        }
+      ],
+      "all_current_servers_have_healthy_endpoints": true,
+      "argocd": {
+        "source_path": "gitops/overlays/demo",
+        "revision": "45437c2aee6664324046b903e475cd7765d0af3c",
+        "health": "Healthy",
+        "sync": "Synced",
+        "operation": "Succeeded",
+        "conditions": []
+      }
+    },
+    "server-rollout": {
+      "recorded_start": "2026-11-19T14:24:45Z",
+      "recorded_end": "2026-11-19T14:30:17Z",
+      "first_captured_call": "2026-11-19T14:25:01.949991592Z",
+      "last_captured_call": "2026-11-19T14:30:13.4334271Z",
+      "start_to_first_call_seconds": 16.949991592,
+      "call_range": [
+        49536,
+        50772
+      ],
+      "missing_call_numbers_within_file": 0,
+      "successful_calls": 1237,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-6d4596c8f4-4vt4b": 86,
+        "greeter-server-6d4596c8f4-5jdzh": 94,
+        "greeter-server-6d4596c8f4-5w9cn": 72,
+        "greeter-server-6d4596c8f4-nhl2v": 64,
+        "greeter-server-6d4596c8f4-nkqtg": 59,
+        "greeter-server-7bfffffc5c-j6bbg": 176,
+        "greeter-server-7bfffffc5c-nxvd9": 163,
+        "greeter-server-7bfffffc5c-r29vq": 185,
+        "greeter-server-7bfffffc5c-vfhs8": 153,
+        "greeter-server-7bfffffc5c-vvws6": 185
+      },
+      "failures": [],
+      "last_60_seconds": {
+        "definition": "Records at most 60 seconds before the last captured call, inclusive; not an independently captured window.",
+        "first_call": "2026-11-19T14:29:13.449206149Z",
+        "last_call": "2026-11-19T14:30:13.4334271Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-6d4596c8f4-4vt4b": 49,
+          "greeter-server-6d4596c8f4-5jdzh": 48,
+          "greeter-server-6d4596c8f4-5w9cn": 48,
+          "greeter-server-6d4596c8f4-nhl2v": 47,
+          "greeter-server-6d4596c8f4-nkqtg": 47
+        }
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-j6bbg",
+          "uid": "277f5cad-68ad-4288-8885-5544c3bed0d3",
+          "created_at": "2026-11-19T11:07:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nxvd9",
+          "uid": "bd7317f7-bbcd-48eb-92cf-fd667b9d2c38",
+          "created_at": "2026-11-19T14:18:27Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-r29vq",
+          "uid": "9b3da3e8-6c59-4f64-87db-a599ad4c165b",
+          "created_at": "2026-11-19T11:06:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vfhs8",
+          "uid": "54b5cda6-9786-45a3-b267-64d3e39cb2b0",
+          "created_at": "2026-11-19T14:22:42Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-vvws6",
+          "uid": "da698c09-f153-4a98-8fc0-458f99c964c6",
+          "created_at": "2026-11-19T11:07:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-4vt4b",
+          "uid": "49a9dd78-df6c-45ca-a577-2d8c0afe3a9e",
+          "created_at": "2026-11-19T14:28:16Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-5jdzh",
+          "uid": "d51f8c8d-7f18-4ef3-b0bd-353a869957d1",
+          "created_at": "2026-11-19T14:28:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-5w9cn",
+          "uid": "dbfd69d1-560c-4767-84ce-75aa0c1eb9da",
+          "created_at": "2026-11-19T14:28:25Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-nhl2v",
+          "uid": "60474019-5815-4785-abff-427a772b446b",
+          "created_at": "2026-11-19T14:28:43Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-nkqtg",
+          "uid": "1d205c01-78af-465d-90b0-c17983f910e6",
+          "created_at": "2026-11-19T14:28:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "server_count_before": 5,
+      "server_count_after": 5,
+      "backend_health": {
+        "HEALTHY": 5,
+        "UNHEALTHY": 5
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-7bfffffc5c-r29vq",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-vvws6",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-j6bbg",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-nxvd9",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-vfhs8",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-5jdzh",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-4vt4b",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-5w9cn",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-nhl2v",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-nkqtg",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        }
+      ],
+      "all_current_servers_have_healthy_endpoints": true,
+      "argocd": {
+        "source_path": "gitops/overlays/demo",
+        "revision": "65908e52549c1c84a133cfcf305dda2846d0a007",
+        "health": "Healthy",
+        "sync": "Synced",
+        "operation": "Succeeded",
+        "conditions": []
+      }
+    },
+    "restored": {
+      "recorded_start": "2026-11-19T14:32:48Z",
+      "recorded_end": "2026-11-19T14:36:31Z",
+      "first_captured_call": "2026-11-19T14:32:48.162868325Z",
+      "last_captured_call": "2026-11-19T14:36:28.164192512Z",
+      "start_to_first_call_seconds": 0.162868325,
+      "call_range": [
+        51386,
+        52259
+      ],
+      "missing_call_numbers_within_file": 0,
+      "successful_calls": 874,
+      "failed_calls": 0,
+      "served_by": {
+        "greeter-server-6d4596c8f4-4vt4b": 78,
+        "greeter-server-6d4596c8f4-5jdzh": 101,
+        "greeter-server-6d4596c8f4-5w9cn": 111,
+        "greeter-server-6d4596c8f4-nhl2v": 88,
+        "greeter-server-6d4596c8f4-nkqtg": 80,
+        "greeter-server-7bfffffc5c-55fn8": 127,
+        "greeter-server-7bfffffc5c-nslrk": 151,
+        "greeter-server-7bfffffc5c-qglzf": 138
+      },
+      "failures": [],
+      "last_60_seconds": {
+        "definition": "Records at most 60 seconds before the last captured call, inclusive; not an independently captured window.",
+        "first_call": "2026-11-19T14:35:28.189476084Z",
+        "last_call": "2026-11-19T14:36:28.164192512Z",
+        "successful_calls": 239,
+        "failed_calls": 0,
+        "served_by": {
+          "greeter-server-7bfffffc5c-55fn8": 80,
+          "greeter-server-7bfffffc5c-nslrk": 80,
+          "greeter-server-7bfffffc5c-qglzf": 79
+        }
+      },
+      "pods_before": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-4vt4b",
+          "uid": "49a9dd78-df6c-45ca-a577-2d8c0afe3a9e",
+          "created_at": "2026-11-19T14:28:16Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-5jdzh",
+          "uid": "d51f8c8d-7f18-4ef3-b0bd-353a869957d1",
+          "created_at": "2026-11-19T14:28:07Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-5w9cn",
+          "uid": "dbfd69d1-560c-4767-84ce-75aa0c1eb9da",
+          "created_at": "2026-11-19T14:28:25Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-nhl2v",
+          "uid": "60474019-5815-4785-abff-427a772b446b",
+          "created_at": "2026-11-19T14:28:43Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-6d4596c8f4-nkqtg",
+          "uid": "1d205c01-78af-465d-90b0-c17983f910e6",
+          "created_at": "2026-11-19T14:28:51Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "manual-evidence-20261119-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "pods_after": [
+        {
+          "name": "greeter-client-5dbd98b6cc-kjh9l",
+          "uid": "7487a0b7-730b-49fb-aa26-85584674f5da",
+          "created_at": "2026-11-19T10:53:10Z",
+          "role": "greeter-client",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": null,
+          "application_containers": [
+            {
+              "name": "client",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "client": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-55fn8",
+          "uid": "235371a2-89d3-4893-9c03-ce32f86e159e",
+          "created_at": "2026-11-19T14:34:43Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-nslrk",
+          "uid": "d0ee170c-22df-4334-a318-fa615604c785",
+          "created_at": "2026-11-19T14:34:26Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        },
+        {
+          "name": "greeter-server-7bfffffc5c-qglzf",
+          "uid": "dc4d5ef3-2340-4fc2-9abc-21f8fb1862f5",
+          "created_at": "2026-11-19T14:34:34Z",
+          "role": "greeter",
+          "ready": true,
+          "terminating": false,
+          "rollout_marker": "verified-1",
+          "application_containers": [
+            {
+              "name": "server",
+              "image": "us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862"
+            }
+          ],
+          "container_restarts": {
+            "server": 0
+          },
+          "init_containers": [
+            {
+              "name": "xds-bootstrap",
+              "exit_code": 0,
+              "restarts": 0
+            }
+          ]
+        }
+      ],
+      "server_count_before": 5,
+      "server_count_after": 3,
+      "backend_health": {
+        "HEALTHY": 3,
+        "UNHEALTHY": 5
+      },
+      "backend_endpoints": [
+        {
+          "pod": "greeter-server-6d4596c8f4-5jdzh",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-4vt4b",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-5w9cn",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-nhl2v",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-6d4596c8f4-nkqtg",
+          "health": "UNHEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": false
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-nslrk",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-qglzf",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        },
+        {
+          "pod": "greeter-server-7bfffffc5c-55fn8",
+          "health": "HEALTHY",
+          "port": 50051,
+          "present_in_after_snapshot": true
+        }
+      ],
+      "all_current_servers_have_healthy_endpoints": true,
+      "argocd": {
+        "source_path": "gitops/overlays/demo",
+        "revision": "e56f2119442955864fdc1d95d7b8425caf9054ff",
+        "health": "Healthy",
+        "sync": "Synced",
+        "operation": "Succeeded",
+        "conditions": []
+      }
+    }
+  },
+  "deleted_server": "greeter-server-7bfffffc5c-4p9r9",
+  "server_startup_records": [
+    {
+      "pod": "greeter-server-6d4596c8f4-4vt4b",
+      "time": "2026-11-19T14:28:18.011964192Z",
+      "level": "WARN",
+      "msg": "private-network plaintext demo: application mTLS is not enabled",
+      "server_id": "greeter-server-6d4596c8f4-4vt4b"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-4vt4b",
+      "time": "2026-11-19T14:28:18.012203248Z",
+      "level": "INFO",
+      "msg": "starting xDS server",
+      "application": "0.0.0.0:50051",
+      "health": "0.0.0.0:50052",
+      "server_id": "greeter-server-6d4596c8f4-4vt4b"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-4vt4b",
+      "time": "2026-11-19T14:28:18.291426761Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-5jdzh",
+      "time": "2026-11-19T14:28:10.984142884Z",
+      "level": "WARN",
+      "msg": "private-network plaintext demo: application mTLS is not enabled",
+      "server_id": "greeter-server-6d4596c8f4-5jdzh"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-5jdzh",
+      "time": "2026-11-19T14:28:10.984207777Z",
+      "level": "INFO",
+      "msg": "starting xDS server",
+      "application": "0.0.0.0:50051",
+      "health": "0.0.0.0:50052",
+      "server_id": "greeter-server-6d4596c8f4-5jdzh"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-5jdzh",
+      "time": "2026-11-19T14:28:11.355400161Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-5w9cn",
+      "time": "2026-11-19T14:28:27.94699301Z",
+      "level": "WARN",
+      "msg": "private-network plaintext demo: application mTLS is not enabled",
+      "server_id": "greeter-server-6d4596c8f4-5w9cn"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-5w9cn",
+      "time": "2026-11-19T14:28:27.947056963Z",
+      "level": "INFO",
+      "msg": "starting xDS server",
+      "application": "0.0.0.0:50051",
+      "health": "0.0.0.0:50052",
+      "server_id": "greeter-server-6d4596c8f4-5w9cn"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-5w9cn",
+      "time": "2026-11-19T14:28:28.517310057Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-nhl2v",
+      "time": "2026-11-19T14:28:46.09699261Z",
+      "level": "WARN",
+      "msg": "private-network plaintext demo: application mTLS is not enabled",
+      "server_id": "greeter-server-6d4596c8f4-nhl2v"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-nhl2v",
+      "time": "2026-11-19T14:28:46.097083022Z",
+      "level": "INFO",
+      "msg": "starting xDS server",
+      "application": "0.0.0.0:50051",
+      "health": "0.0.0.0:50052",
+      "server_id": "greeter-server-6d4596c8f4-nhl2v"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-nhl2v",
+      "time": "2026-11-19T14:28:46.358771977Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-nkqtg",
+      "time": "2026-11-19T14:28:53.243779548Z",
+      "level": "WARN",
+      "msg": "private-network plaintext demo: application mTLS is not enabled",
+      "server_id": "greeter-server-6d4596c8f4-nkqtg"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-nkqtg",
+      "time": "2026-11-19T14:28:53.243837284Z",
+      "level": "INFO",
+      "msg": "starting xDS server",
+      "application": "0.0.0.0:50051",
+      "health": "0.0.0.0:50052",
+      "server_id": "greeter-server-6d4596c8f4-nkqtg"
+    },
+    {
+      "pod": "greeter-server-6d4596c8f4-nkqtg",
+      "time": "2026-11-19T14:28:53.598472104Z",
+      "level": "INFO",
+      "msg": "xDS serving mode changed",
+      "address": "0.0.0.0:50051",
+      "mode": "SERVING",
+      "error": null
+    }
+  ],
+  "repository_at_restoration": {
+    "revision": "e56f2119442955864fdc1d95d7b8425caf9054ff",
+    "kustomize": {
+      "replicas": 3,
+      "minAvailable": 2
+    },
+    "helm_defaults": {
+      "replicas": 5,
+      "minAvailable": 3
+    },
+    "baseline_parity": "FAIL: Helm/Kustomize behavior differs for Deployment/greeter-server",
+    "ci": {
+      "conclusion": "failure",
+      "url": "https://github.com/cohavisi/utila-gRPC-Infrastructure/actions/runs/44545168018"
+    }
+  },
+  "limitations": [
+    "No screenshots were supplied in this source directory.",
+    "The restored backend snapshot includes five unhealthy retired endpoints; later removal was not captured.",
+    "The server-rollout log begins 16.949991592 seconds after its recorded start; the reason is not recorded.",
+    "Captured windows are disjoint selected intervals, not a complete client-lifetime log.",
+    "RPC latency, long-lived streams, node failure, network partition, and application mTLS were not demonstrated.",
+    "No shutdown/drain records or exact pod-deletion command were supplied for this run.",
+    "Input hashes identify supplied local files, not independent authentication of their origin."
+  ]
+}

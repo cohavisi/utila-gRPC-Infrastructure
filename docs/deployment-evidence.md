@@ -12,6 +12,13 @@ live state.
 - [Reproduction, architecture, and teardown runbook](../README.md)
 - [Machine-readable verification](evidence/verification.json)
 - [Browser-readable captured-data report](evidence/verification.html)
+- [Separate manual reproduction report, 2026-11-19](part-2-tasks-3-6-manual-test-report-2026-11-19.md)
+  records the later operator-run experiments, their historical qualifications,
+  and subsequent CI/backend-cleanup follow-ups.
+- [Dated backend-cleanup closure](evidence/manual-20261119T135844Z/backend-cleanup-closure.json):
+  a separate read-only observation at `15:10:57Z` found exactly three healthy
+  endpoints and no unhealthy entries. The original measurements and screenshots
+  below remain unchanged.
 
 The application image was built from
 [`97c8a93`](https://github.com/cohavisi/utila-gRPC/commit/97c8a93b730129e1870f824d20b3dbf998a6346e)

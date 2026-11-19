@@ -4,6 +4,13 @@ Companion to [utila-gRPC](https://github.com/cohavisi/utila-gRPC). Terraform own
 Google Cloud resources; Argo CD owns application Kubernetes resources; GKE's
 standalone NEG controller owns pod endpoint membership.
 
+> **Assignment scope:** "fully managed by ArgoCD" is interpreted here as
+> application-level Kubernetes GitOps (Task 6). Terraform is applied separately
+> for GCP provisioning and mesh routing (Task 3). Argo CD installation and its
+> Application/AppProject are bootstrapped with `kubectl`, not self-managed.
+> Argo-driven cloud provisioning is not implemented. This boundary is explicit,
+> but evaluator acceptance of that interpretation is not assumed.
+
 **Status:** deployed in `vast-maxim-388708`, `us-central1-a`, with real managed
 client/server xDS. Argo CD is Healthy/Synced; three servers and the original
 continuous client are running. Distribution, GitOps scale-out, pod replacement,
@@ -55,7 +62,8 @@ No custom Terraform plugin or `local-exec` hides this ownership boundary.
 - An existing, billed GCP project with GKE/Compute quota and permissions to
   enable APIs, provision the listed resources, manage IAM, and upload images.
 - Terraform **1.17.2**, Google Cloud CLI with `gke-gcloud-auth-plugin`, kubectl,
-  Docker Buildx, Python 3, Git, and both repositories checked out.
+  Docker Buildx, Python 3, Git, and writable copies of both repositories checked
+  out as siblings; see step 0.
 - A trusted administrator IPv4 CIDR, normally your current public IP `/32`.
   The example CIDR is documentation-only; replace it.
 - Service Usage API access for initial API enablement. Organization policies
@@ -65,6 +73,40 @@ No custom Terraform plugin or `local-exec` hides this ownership boundary.
 nodes, disks, Cloud NAT, Artifact Registry, and managed mesh resources. This is
 a single-zone demonstration, not high availability. Destroy it when finished.
 Do not run the following against an unrelated project.
+
+## 0. Prepare writable repositories and the Argo CD source
+
+For an independent deployment, fork **both** repositories into your GitHub
+namespace before configuring another GCP project. From your chosen parent
+directory, clone the forks as siblings:
+
+```sh
+export GITHUB_OWNER="YOUR_GITHUB_OWNER"
+git clone "https://github.com/${GITHUB_OWNER}/utila-gRPC.git"
+git clone "https://github.com/${GITHUB_OWNER}/utila-gRPC-Infrastructure.git"
+cd utila-gRPC-Infrastructure
+git remote get-url origin
+```
+
+In the existing `gitops/argocd/application.yaml`, update **both** repository
+references, preserving the remaining configuration:
+
+| Document | Field | Value for your deployment |
+| --- | --- | --- |
+| `AppProject/utila-grpc` | `spec.sourceRepos[0]` | `https://github.com/YOUR_GITHUB_OWNER/utila-gRPC-Infrastructure.git` |
+| `Application/utila-grpc` | `spec.source.repoURL` | The same infrastructure fork URL |
+| `Application/utila-grpc` | `spec.source.targetRevision` | Your deployment branch, normally `main` |
+
+Use your actual GitHub owner in the URL. The AppProject allowlist and Application
+URL must agree. Keep `spec.source.path: gitops/overlays/demo`. Push subsequent
+configuration changes to the branch selected by `targetRevision`.
+`scripts/configure_demo.py` updates the image and cloud settings only: it
+**does not change these Git repository references**.
+
+If you already maintain the supplied repositories and have write access, you
+can keep their existing URLs. Do not retarget the running shared demonstration
+to a fork merely to read its evidence. For private forks, register a read-only
+repository credential in Argo CD outside Git before creating the Application.
 
 ## 1. Bootstrap state and platform
 
@@ -132,10 +174,20 @@ No cloud credentials are written to the manifests. The committed overlay is
 configured for the demonstrated project; reconfigure it for a different
 environment rather than deploying someone else's identities or image reference.
 
-Review the two changed files under `gitops/overlays/demo`, then commit and push
-the application and infrastructure changes to their configured `main` branches.
-Argo CD cannot read local/unpushed files. If either repository becomes private,
-register a read-only repository credential in Argo CD outside Git.
+Review the two changed files under `gitops/overlays/demo` **and** the repository
+references in `gitops/argocd/application.yaml` from step 0:
+
+```sh
+git -C ../utila-gRPC remote get-url origin
+git remote get-url origin
+git diff -- gitops/argocd/application.yaml gitops/overlays/demo
+```
+
+Commit and push the application source to your application repository and the
+infrastructure configuration to the repository and branch selected by the
+Application. Before bootstrapping Argo CD, confirm the configured overlay and
+digest are visible on that GitHub branch. Argo CD cannot read local/unpushed
+files; a correct local render does not prove it will read your fork.
 
 ## 3. Bootstrap Argo CD and create the standalone NEG
 

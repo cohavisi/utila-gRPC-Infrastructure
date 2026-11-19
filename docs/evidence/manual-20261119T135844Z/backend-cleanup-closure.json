@@ -1,0 +1,27 @@
+{
+  "scope": "Separate read-only review observation after manual run evidence-20261119T135844Z; does not replace or alter the original experiment captures.",
+  "observed_at": "2026-11-19T15:10:57.403529+00:00",
+  "project_id": "vast-maxim-388708",
+  "backend_service": "utila-grpc",
+  "backend_scope": "global",
+  "command": "gcloud compute backend-services get-health utila-grpc --global --project=vast-maxim-388708 --format=json",
+  "representation": "Reduced counts from the command response; raw API response and screenshot are not included.",
+  "endpoint_count": 3,
+  "health_counts": {
+    "HEALTHY": 3
+  },
+  "unhealthy_endpoint_count": 0,
+  "prior_restoration_capture": {
+    "file": "restored-backends.json",
+    "sha256": "f6ef2bbac818c7f5dad0c6bb80bafff809db731608af3d619e0dcad597925273",
+    "healthy_endpoint_count": 3,
+    "unhealthy_retired_endpoint_count": 5,
+    "preserved_unchanged": true
+  },
+  "limitations": [
+    "The observation establishes three healthy entries and no unhealthy entries at this later time, not the exact cleanup convergence delay.",
+    "No new deployment, scaling, pod deletion, routing change, or teardown was performed.",
+    "This is not a repeated failure or rollout experiment and does not establish uninterrupted availability or RPC latency.",
+    "This reduced observation is not an independently authenticated raw-capture archive."
+  ]
+}
