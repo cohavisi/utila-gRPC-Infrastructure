@@ -25,7 +25,7 @@ Go client          -> direct RPCs to Go server pods, without traffic sidecars
 
 This uses **Google Cloud service-routing APIs**, not GKE Gateway API or Istio
 configuration. See the application's
-[integration decision](https://github.com/cohavisi/utila-gRPC/blob/main/docs/part-2-integration-decision.md).
+[integration decision](https://github.com/cohavisi/utila-gRPC/blob/main/docs/part-2-tasks-3-6-integration-decision.md).
 The logical target is `xds:///greeter.utila.internal:50051`; no DNS record is
 required for that target.
 
