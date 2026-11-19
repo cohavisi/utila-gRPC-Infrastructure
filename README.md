@@ -4,11 +4,12 @@ Companion to [utila-gRPC](https://github.com/cohavisi/utila-gRPC). Terraform own
 Google Cloud resources; Argo CD owns application Kubernetes resources; GKE's
 standalone NEG controller owns pod endpoint membership.
 
-**Status:** infrastructure definitions, GitOps manifests, and local checks are
-implemented. Project/location selection, billing, and regional quota checks are
-complete, and approved cloud provisioning is in progress. Image publication,
-application deployment, real managed xDS acceptance, and screenshots remain
-deployment gates.
+**Status:** deployed in `vast-maxim-388708`, `us-central1-a`, with real managed
+client/server xDS. Argo CD is Healthy/Synced; three servers and the original
+continuous client are running. Distribution, GitOps scale-out, pod replacement,
+and server rollout are recorded in the [deployment evidence](docs/deployment-evidence.md),
+with screenshots and an explicit account of initial discovery errors.
+**Cloud resources remain running and billable.**
 
 ## Architecture and ownership
 
@@ -127,14 +128,14 @@ python3 scripts/configure_demo.py \
 The script reads **applied platform outputs**, supplies the project number,
 network/mesh/cluster details and distinct workload identities, and pins the
 image digest. It rejects mutable tags, zero digests, and another registry.
-No cloud credentials are written to the manifests. The committed placeholder
-overlay is intentionally not deployable.
+No cloud credentials are written to the manifests. The committed overlay is
+configured for the demonstrated project; reconfigure it for a different
+environment rather than deploying someone else's identities or image reference.
 
 Review the two changed files under `gitops/overlays/demo`, then commit and push
 the application and infrastructure changes to their configured `main` branches.
-The infrastructure remote was empty during implementation; Argo CD cannot
-read local/unpushed files. If either repository becomes private, register a
-read-only repository credential in Argo CD outside Git.
+Argo CD cannot read local/unpushed files. If either repository becomes private,
+register a read-only repository credential in Argo CD outside Git.
 
 ## 3. Bootstrap Argo CD and create the standalone NEG
 
@@ -205,6 +206,11 @@ bindings, Service NEG status, backend health, and Argo CD conditions. Do not
 silently switch to DNS, a non-xDS server, or a sidecar to make the demo pass.
 
 ## 5. Reviewer evidence
+
+The completed [evidence package](docs/deployment-evidence.md) includes actual
+Argo CD UI and captured-data report screenshots, machine-readable observations,
+and the measurement/transport limitations. The following is the reproduction
+checklist:
 
 Record observations and screenshots; do not substitute the local test results:
 

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Proxyless gRPC deployment evidence</title>
+<style>
+body {font:17px/1.5 system-ui,sans-serif;color:#142d40;background:#edf3f7;margin:0;padding:36px}
+main {max-width:1260px;margin:auto;background:white;padding:36px;border-radius:12px}
+h1 {margin:0 0 8px;font-size:32px} h2 {font-size:22px;margin-top:26px}
+p {margin:8px 0} .sub {color:#4b6172} .ok {color:#14744c;font-weight:700}
+table {width:100%;border-collapse:collapse;font-size:15px} th {text-align:left;background:#e8f0f5}
+td,th {padding:10px 12px;border-bottom:1px solid #dce5eb} code {font-size:14px;overflow-wrap:anywhere}
+.notice {background:#fff3dc;border-left:5px solid #d59a1d;padding:12px 16px;margin-top:22px}
+</style><main>
+<h1>Proxyless Go gRPC on Cloud Service Mesh</h1>
+<p class="sub">Captured Kubernetes / GCP / client-log report, not a GCP Console screenshot.</p>
+<p><b>Project:</b> vast-maxim-388708 &nbsp; <b>Zone:</b> us-central1-a &nbsp;
+<b>GKE:</b> v1.36.4-gke.2377000</p>
+<p class="ok">Argo CD: Healthy / Synced at 2fe6936 &nbsp; | &nbsp;
+3 healthy backend endpoints &nbsp; | &nbsp; 2 ready private nodes</p>
+<h2>Kubernetes workloads: actual final snapshot</h2>
+<table><tr><th>Pod</th><th>Status</th><th>App containers</th><th>Bootstrap exit</th><th>Restarts</th></tr>
+<tr><td>greeter-client-5dbd98b6cc-kjh9l</td><td>Ready</td><td>1</td><td>0</td><td>0</td></tr><tr><td>greeter-server-7bfffffc5c-j6bbg</td><td>Ready</td><td>1</td><td>0</td><td>0</td></tr><tr><td>greeter-server-7bfffffc5c-r29vq</td><td>Ready</td><td>1</td><td>0</td><td>0</td></tr><tr><td>greeter-server-7bfffffc5c-vvws6</td><td>Ready</td><td>1</td><td>0</td><td>0</td></tr></table>
+<p class="sub">One application container and one completed bootstrap init container per pod; no traffic sidecar.</p>
+<h2>Measured RPC behavior</h2>
+<table><tr><th>Observation</th><th>Successful calls</th><th>Failed calls</th><th>Calls per observed backend</th></tr>
+<tr><td>Baseline: 3 servers</td><td>120</td><td>0</td><td>40 / 40 / 40</td></tr><tr><td>GitOps scale-out: 3 to 5</td><td>200</td><td>0</td><td>40 / 40 / 40 / 40 / 40</td></tr><tr><td>Pod force-deletion</td><td>223</td><td>0</td><td>47 / 2 / 37 / 46 / 45 / 46</td></tr><tr><td>GitOps rollout: all 5 servers</td><td>422</td><td>0</td><td>22 / 13 / 39 / 33 / 28 / 64 / 42 / 70 / 49 / 62</td></tr><tr><td>Restored: 3 servers</td><td>120</td><td>0</td><td>40 / 41 / 39</td></tr></table>
+<p class="sub">Replacement/rollout rows include retired and replacement pod IDs, not simultaneous replica counts.</p>
+<p>Same client UID throughout: <code>7487a0b7-730b-49fb-aa26-85584674f5da</code>; zero client restarts.</p>
+<p>Server xDS mode: <b>SERVING</b>. Rollout logs include <code>shutdown requested</code>
+and <code>application drained</code>. Exact timestamps and server IDs are in verification.json.</p>
+<div class="notice"><b>Startup errors are included, not hidden:</b> the lifetime snapshot through
+2026-11-19T11:17:26.009036705Z contains <b>23 initial discovery failures</b>, then
+<b>4,821 successful calls and zero later failures</b>. The route initially referenced a relative
+backend ID; changing it to the canonical URL restored the same running client.</div>
+<p class="sub">These are observed unary-call windows, not guarantees of lossless failover.
+Pod deletion is not a node crash. Long-lived streams were not tested.
+Application traffic is plaintext on private pod addresses, not mTLS.</p>
+<p class="sub">Captured: 2026-11-19T11:26:00.299567+00:00. Image source: 97c8a93.</p>
+<p><code>us-central1-docker.pkg.dev/vast-maxim-388708/utila-grpc/greeter@sha256:0c0c3efd3609af7d3e58e6c8fb3c085bbec85f173cd2e027c63ba717b86bc862</code></p>
+</main></html>
