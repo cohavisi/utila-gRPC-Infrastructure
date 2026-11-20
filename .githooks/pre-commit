@@ -1,0 +1,18 @@
+#!/bin/sh
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+git diff --cached --check
+if [ -z "${PYTHON:-}" ] && [ -x "$PWD/.tmp/venv/bin/python" ]; then
+    export PYTHON="$PWD/.tmp/venv/bin/python"
+fi
+snapshot=$(mktemp -d "${TMPDIR:-/tmp}/utila-infra-pre-commit.XXXXXX")
+trap 'rm -rf "$snapshot"' 0
+trap 'exit 1' HUP INT TERM
+
+git checkout-index --all --prefix="$snapshot/"
+unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE GIT_COMMON_DIR
+unset TF_DATA_DIR TF_WORKSPACE
+cd "$snapshot"
+printf '%s\n' "Checking staged Terraform, Python tests, and Kubernetes manifests..."
+make check

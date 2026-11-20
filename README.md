@@ -306,6 +306,29 @@ checks; it does not provision infrastructure or execute a live cloud plan.
 Use a fresh checkout for offline-backend checks if your working directory is
 already initialized against a real GCS backend.
 
+### Pre-commit hook
+
+After installing the check prerequisites above, enable the versioned hook once
+per clone:
+
+```sh
+make install-hooks
+```
+
+Each commit checks staged files for whitespace errors and runs `make check` in
+an isolated temporary snapshot. This covers Terraform formatting, validation
+and mocked tests, Python unit tests, and Kubernetes schema/cross-resource
+analysis. Failures block the commit; unstaged changes are not tested or modified.
+The deployed checkout's Terraform initialization and state are not touched.
+No live Terraform apply or GCP/Kubernetes mutation is performed.
+
+The hook uses `.tmp/venv/bin/python` from the original checkout when available,
+otherwise `python3`. Set `PYTHON` to an absolute interpreter path to override it.
+Terraform, kubectl and kubeconform must be available; `KUBECONFORM` can specify
+an absolute validator path. Provider/schema downloads require network access.
+The hook does not install missing tools or dependencies, and CI remains the
+authoritative shared check.
+
 ## Teardown
 
 1. Stop Argo reconciliation by deleting only the Application:

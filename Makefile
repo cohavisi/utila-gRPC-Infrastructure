@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: check
+.PHONY: check install-hooks
 check:
 	terraform fmt -check -recursive
 	@for stack in state platform routing; do \
@@ -11,3 +11,6 @@ check:
 	terraform -chdir=terraform/routing test -no-color
 	$(PYTHON) -m unittest discover -s scripts -p 'test_*.py'
 	$(PYTHON) scripts/check_manifests.py
+
+install-hooks:
+	git config --local core.hooksPath .githooks
