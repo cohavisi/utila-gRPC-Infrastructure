@@ -8,3 +8,7 @@
 crash.log
 /.tmp/
 __pycache__/
+.coverage
+coverage.xml
+htmlcov/
+.ruff_cache/

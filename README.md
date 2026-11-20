@@ -306,6 +306,34 @@ checks; it does not provision infrastructure or execute a live cloud plan.
 Use a fresh checkout for offline-backend checks if your working directory is
 already initialized against a real GCS backend.
 
+### CI security, Python lint, and coverage
+
+On pushes and pull requests, additional CI checks run without cloud credentials:
+
+- Gitleaks scans the complete fetched Git history with redacted findings and
+  fails on detected secrets.
+- Ruff checks Python code and import ordering with `ruff check scripts/`;
+  `ruff format --check scripts/` enforces formatting. Rules are versioned in
+  `ruff.toml`. Use `ruff format scripts/` to format locally.
+- Trivy checks Terraform source, the fully rendered demo Kustomize workloads,
+  and local Argo CD manifests. HIGH and CRITICAL misconfigurations fail CI;
+  no exceptions are configured. Bases are not scanned as standalone workloads:
+  the overlay supplies security settings required by the deployed configuration.
+
+Trivy performs static analysis, not a live Terraform plan or cloud audit.
+Required Terraform variables can remain unresolved in source scans, and remote
+upstream Argo CD installation resources are outside this security scan.
+Scanner versions are pinned and downloaded scanner archives are checksum
+verified. Security scanning and Ruff remain CI checks, separate from the
+pre-commit hook's existing checks.
+
+`make check` measures Python unit-test coverage of scripts, excluding test files.
+CI publishes XML and HTML reports as the **python-coverage** artifact for 14 days.
+Download it from the workflow run's Artifacts section and open
+`htmlcov/index.html`. There is no minimum threshold; low coverage remains
+visible rather than being hidden by exclusions of untested application code.
+The separate manifest-validation process is not counted as unit-test coverage.
+
 ### Pre-commit hook
 
 After installing the check prerequisites above, enable the versioned hook once
